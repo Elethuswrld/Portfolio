@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills - Elethu's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+  
+  <div class="loading">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="hero-header">
+    <div class="wrapper">
+      <header>
+        <div class="logo">
+          <i class="fa-solid fa-e"></i>
+          <div class="logo-text">Elethuswrld</div>
+        </div>
+        <nav>
+          <div class="togglebtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="navlinks">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/skills.html" class="active">Skills</a></li>
+            <li><a href="/gamedev.html">Game Dev</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Skills Section -->
+      <section class="skills-section">
+        <h2>My Skills</h2>
+        <p class="section-description">A showcase of my technical expertise across frontend, backend, and development tools, demonstrated through projects and proficiency levels.</p>
+        <div class="skill-tabs">
+          <button class="tab active" data-category="all">All</button>
+          <button class="tab" data-category="frontend">Frontend</button>
+          <button class="tab" data-category="backend">Backend</button>
+          <button class="tab" data-category="tools">Tools</button>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card frontend" onclick="toggleProjects(this)">
+            <i class="fab fa-html5"></i>
+            <span>HTML</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://elethuswrld.github.io/Product-Landing-Page/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Product Landing Page</strong>
+                    <p>A product landing page built with HTML and CSS.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="github-project" href="https://ellissneakerfactory.netlify.app/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>E-commerce Website</strong>
+                    <p>A responsive website showcasing my work built with HTML, CSS & JavaScript.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="github-project" href="https://elethuswrld.github.io/Resume/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Resume</strong>
+                    <p>A responsive Resume showcasing my work built with HTML and CSS.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card frontend" onclick="toggleProjects(this)">
+            <i class="fab fa-css3-alt"></i>
+            <span>CSS</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 70%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://elethuswrld.github.io/Animated-Gradient-Background-with-Themes-/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Animated Gradient Background with Themes</strong>
+                    <p>A dynamic background with theme switching using CSS animations.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="github-project" href="https://elethuswrld.github.io/CSS-Portfolio-Profile-Card/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>CSS Portfolio Profile Card</strong>
+                    <p>A stylish profile card built with advanced CSS techniques.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card frontend" onclick="toggleProjects(this)">
+            <i class="fab fa-js-square"></i>
+            <span>JavaScript</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://elethuswrld.github.io/To-Do-List-App/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>To-Do List App</strong>
+                    <p>A task management app built with JavaScript.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="github-project" href="https://elethuswrld.github.io/Counter-App/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Counter App</strong>
+                    <p>A simple counter application built with JavaScript.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="github-project" href="https://elethuswrld.github.io/Calculator/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Calculator</strong>
+                    <p>A functional calculator built with JavaScript.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card frontend" onclick="toggleProjects(this)">
+            <i class="fab fa-react"></i>
+            <span>React</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 65%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://quote-generator-3cbme5mdk-elethuswrlds-projects.vercel.app/?utm_source=chatgpt.com" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Quote Generator</strong>
+                    <p>A quote generator built with React and modern component architecture.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="github-project" href="https://expense-tracker-1nhkxmde1-elethuswrlds-projects.vercel.app/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Expense Tracker</strong>
+                    <p>An expense tracker built with React and modern component architecture.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="github-project" href="https://movie-search-epmp8vpa0-elethuswrlds-projects.vercel.app/" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Movie / TV Show Search</strong>
+                    <p>A movie and TV show search app built with React.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card frontend" onclick="toggleProjects(this)">
+            <i class="fab fa-js"></i>
+            <span>TypeScript</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/typescript-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>TypeScript App</strong>
+                    <p>A type-safe web application leveraging TypeScript features.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card frontend" onclick="toggleProjects(this)">
+            <i class="fab fa-react"></i>
+            <span>React Native</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/react-native-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Mobile App</strong>
+                    <p>A cross-platform mobile app built with React Native.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card frontend" onclick="toggleProjects(this)">
+            <i class="fab fa-flutter"></i>
+            <span>Flutter (Dart)</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/flutter-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Flutter App</strong>
+                    <p>A mobile application built with Flutter and Dart for cross-platform use.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/python-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Python Learning Projects</strong>
+                    <p>Basic scripts and automation tools built while learning Python fundamentals.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fas fa-server"></i>
+            <span>Node.js</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 60%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/node-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Node.js API</strong>
+                    <p>A RESTful API built with Node.js for scalable backend services.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fas fa-server"></i>
+            <span>Express.js</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 55%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/express-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Express Server</strong>
+                    <p>A backend server built with Express.js for efficient routing and middleware.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fas fa-database"></i>
+            <span>SQL/NoSQL</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/database-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Database Management</strong>
+                    <p>Projects involving SQL and NoSQL database design and queries.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fas fa-code"></i>
+            <span>Pandas</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/pandas-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Data Analysis</strong>
+                    <p>Data manipulation and analysis projects using Pandas library.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fas fa-brain"></i>
+            <span>TensorFlow</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/tensorflow-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Machine Learning Model</strong>
+                    <p>Neural network models built with TensorFlow for predictive analytics.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fas fa-brain"></i>
+            <span>PyTorch</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/pytorch-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Deep Learning Project</strong>
+                    <p>Deep learning models developed using PyTorch framework.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fas fa-code"></i>
+            <span>C#</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/csharp-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>C# Application</strong>
+                    <p>Desktop or game development projects using C#.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fas fa-code"></i>
+            <span>C++</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/cpp-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>C++ System</strong>
+                    <p>Performance-critical applications built with C++.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fab fa-rust"></i>
+            <span>Rust</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 45%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/rust-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Rust Application</strong>
+                    <p>Safe and concurrent systems programming with Rust.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card tools" onclick="toggleProjects(this)">
+            <i class="fab fa-git-alt"></i>
+            <span>Git</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 55%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>GitHub Profile</strong>
+                    <p>Version control and collaboration using Git and GitHub workflows.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card tools" onclick="toggleProjects(this)">
+            <i class="fas fa-code"></i>
+            <span>VS Code</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 80%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/portfolio" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Development Environment</strong>
+                    <p>Efficient coding workflow with VS Code extensions and shortcuts.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="skill-card backend" onclick="toggleProjects(this)">
+            <i class="fas fa-code"></i>
+            <span>Purpose</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 50%;"></div>
+            </div>
+            <div class="project-list">
+              <a class="github-project" href="https://github.com/Elethuswrld/purpose-projects" target="_blank" rel="noopener">
+                <div class="project-preview">
+                  <i class="fab fa-github"></i>
+                  <div class="project-text">
+                    <strong>Purpose Project</strong>
+                    <p>Exploratory project using the Purpose language for specific use cases.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Badges Section -->
+      <section class="badges-section">
+        <h2>My Badges</h2>
+        <p class="section-description">A collection of badges earned through certifications, challenges, and contributions, highlighting my achievements in various technical domains.</p>
+        <div class="badges-grid">
+          <div class="badge-card fade-in" data-badge="frontend-master">
+            <img src="https://via.placeholder.com/100?text=Frontend+Badge" alt="Frontend Master Badge"/>
+            <h4 class="badge-title">Frontend Master</h4>
+            <p class="badge-description">Earned for completing advanced frontend development challenges, showcasing expertise in HTML, CSS, and JavaScript.</p>
+          </div>
+          <div class="badge-card fade-in" data-badge="react-expert">
+            <img src="https://via.placeholder.com/100?text=React+Badge" alt="React Expert Badge"/>
+            <h4 class="badge-title">React Expert</h4>
+            <p class="badge-description">Awarded for building multiple React applications with modern component architecture and state management.</p>
+          </div>
+          <div class="badge-card fade-in" data-badge="backend-specialist">
+            <img src="https://via.placeholder.com/100?text=Backend+Badge" alt="Backend Specialist Badge"/>
+            <h4 class="badge-title">Backend Specialist</h4>
+            <p class="badge-description">Recognized for proficiency in Node.js, Express, and database management for scalable backend systems.</p>
+          </div>
+          <div class="badge-card fade-in" data-badge="open-source-contributor">
+            <img src="https://via.placeholder.com/100?text=Open+Source+Badge" alt="Open Source Contributor Badge"/>
+            <h4 class="badge-title">Open Source Contributor</h4>
+            <p class="badge-description">Received for active contributions to open-source projects on GitHub, enhancing community-driven software.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2025 Elethuswrld. All rights reserved.</p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/profile.php?id=61575782769895" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/elethu-cotyi-b48409237/" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/elethu_cotyi/" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://github.com/Elethuswrld" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+<style>
+  /* General Styles */
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+  }
+
+  body {
+    overflow-x: hidden;
+    transition: background-color 0.5s ease-in-out;
+    line-height: 1.6;
+  }
+
+  .hero-header {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    transition: all 0.3s ease;
+  }
+
+  .wrapper {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Header Styles */
+  header {
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo i {
+    width: 45px;
+    height: 45px;
+    background-color: #007ced;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .logo i:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 124, 237, 0.3);
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .togglebtn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .togglebtn span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .togglebtn.click span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .togglebtn.click span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .togglebtn.click span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .navlinks {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  .navlinks li a {
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+  }
+
+  .navlinks li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007ced;
+    transition: width 0.3s ease;
+  }
+
+  .navlinks li a:hover,
+  .navlinks li a.active {
+    color: #007ced;
+  }
+
+  .navlinks li a:hover::after,
+  .navlinks li a.active::after {
+    width: 100%;
+  }
+
+  /* Skills Section */
+  .skills-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .skills-section h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #007ced, #00a8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    position: relative;
+  }
+
+  .skills-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #007ced, #00a8ff);
+    border-radius: 2px;
+  }
+
+  .section-description {
+    font-size: 1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.5;
+  }
+
+  /* Skill Tabs */
+  .skill-tabs {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .skill-tabs .tab {
+    background: transparent;
+    border: 2px solid #007ced;
+    color: #007ced;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-tabs .tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .skill-tabs .tab:hover::before {
+    left: 100%;
+  }
+
+  .skill-tabs .tab.active,
+  .skill-tabs .tab:hover {
+    background: #007ced;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 124, 237, 0.3);
+  }
+
+  .skill-tabs { display: flex; flex-wrap: wrap; gap: 15px; role: tablist; }
+  .tab { cursor: pointer; }
+  .tab[aria-selected="true"] { border-color: #00a8ff; background: #007ced; color: #fff; }
+
+  /* Skills Grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .skill-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 124, 237, 0.1);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid rgba(0, 124, 237, 0.1);
+    overflow: hidden;
+  }
+
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 124, 237, 0.05), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .skill-card:hover::before {
+    left: 100%;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 124, 237, 0.15);
+    border-color: rgba(0, 124, 237, 0.3);
+  }
+
+  .skill-card i {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #007ced;
+    transition: all 0.3s ease;
+  }
+
+  .skill-card:hover i {
+    transform: scale(1.1) rotateY(360deg);
+    color: #00a8ff;
+  }
+
+  .skill-card span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e8f4fd;
+    border-radius: 20px;
+    margin: 15px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(0, 124, 237, 0.1), rgba(0, 168, 255, 0.1));
+    border-radius: 20px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #007ced, #00a8ff);
+    border-radius: 20px;
+    animation: fillBar 2s ease forwards;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-fill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  @keyframes fillBar {
+    from { width: 0; }
+  }
+
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* Project List */
+  .project-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, margin-top 0.3s ease;
+  }
+
+  .skill-card.expanded .project-list {
+    max-height: 1000px;
+    margin-top: 20px;
+  }
+
+  .github-project {
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 15px;
+    display: block;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .skill-card.expanded .github-project {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .skill-card.expanded .github-project:nth-child(1) { transition-delay: 0.1s; }
+  .skill-card.expanded .github-project:nth-child(2) { transition-delay: 0.2s; }
+  .skill-card.expanded .github-project:nth-child(3) { transition-delay: 0.3s; }
+
+  .github-project:hover {
+    transform: translateY(-3px) translateX(5px);
+  }
+
+  .project-preview {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    background: rgba(0, 124, 255, 0.08);
+    border-left: 4px solid #007ced;
+    padding: 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -4px;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(135deg, #00a8ff, #007ced);
+    transition: height 0.3s ease;
+  }
+
+  .github-project:hover .project-preview::before {
+    height: 100%;
+  }
+
+  .github-project:hover .project-preview {
+    background: rgba(0, 124, 255, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 124, 237, 0.2);
+  }
+
+  .project-preview i {
+    font-size: 1.8rem;
+    color: #007ced;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .github-project:hover .project-preview i {
+    color: #00a8ff;
+    transform: scale(1.1);
+  }
+
+  .project-text strong {
+    font-size: 1rem;
+    color: #007ced;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  .project-text p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  /* Badges Section */
+  .badges-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+  }
+
+  .badges-section h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #007ced, #00a8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    position: relative;
+  }
+
+  .badges-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #007ced, #00a8ff);
+    border-radius: 2px;
+  }
+
+  .badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .badge-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 124, 237, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 124, 237, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .badge-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 124, 237, 0.15);
+    border-color: rgba(0, 124, 237, 0.3);
+  }
+
+  .badge-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+
+  .badge-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .badge-description {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Dark Mode Toggle */
+  #darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #007ced;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 124, 237, 0.3);
+  }
+
+  #darkModeToggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 124, 237, 0.4);
+  }
+
+  /* Dark Mode Styles */
+  .dark-mode {
+    background-color: #111;
+    color: #ddd;
+  }
+
+  .dark-mode .hero-header {
+    background: #111;
+  }
+
+  .dark-mode .logo-text {
+    color: #ddd;
+  }
+
+  .dark-mode .togglebtn span {
+    background: #ddd;
+  }
+
+  .dark-mode .navlinks li a {
+    color: #ddd;
+  }
+
+  .dark-mode .navlinks li a:hover,
+  .dark-mode .navlinks li a.active {
+    color: #00a8ff;
+  }
+
+  .dark-mode .navlinks li a::after {
+    background: #00a8ff;
+  }
+
+  .dark-mode .skills-section h2,
+  .dark-mode .badges-section h2 {
+    background: linear-gradient(135deg, #00a8ff, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dark-mode .skills-section h2::after,
+  .dark-mode .badges-section h2::after {
+    background: linear-gradient(135deg, #00a8ff, #4facfe);
+  }
+
+  .dark-mode .section-description {
+    color: #ccc;
+  }
+
+  .dark-mode .skill-card {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ddd;
+    border-color: rgba(0, 168, 255, 0.2);
+  }
+
+  .dark-mode .skill-card i {
+    color: #00a8ff;
+  }
+
+  .dark-mode .progress-bar {
+    background: #2a2a2a;
+  }
+
+  .dark-mode .project-preview {
+    background: rgba(0, 168, 255, 0.1);
+    border-left-color: #00a8ff;
+  }
+
+  .dark-mode .project-preview i {
+    color: #00a8ff;
+  }
+
+  .dark-mode .project-text strong {
+    color: #00a8ff;
+  }
+
+  .dark-mode .project-text p {
+    color: #ccc;
+  }
+
+  .dark-mode .badge-card {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ddd;
+    border-color: rgba(0, 168, 255, 0.2);
+  }
+
+  .dark-mode .badge-title {
+    color: #ddd;
+  }
+
+  .dark-mode .badge-description {
+    color: #ccc;
+  }
+
+  .dark-mode #darkModeToggle {
+    background: #333;
+  }
+
+  /* Loading Animation */
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+
+  .loading span {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background: #007ced;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+  }
+
+  .loading span:nth-child(1) { animation-delay: -0.32s; }
+  .loading span:nth-child(2) { animation-delay: -0.16s; }
+  .loading span:nth-child(3) { animation-delay: 0s; }
+  .loading span:nth-child(4) { animation-delay: 0.16s; }
+  .loading span:nth-child(5) { animation-delay: 0.32s; }
+
+  @keyframes bounce {
+    0%, 80%, 100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+
+  /* Footer Styles */
+  .site-footer {
+    background: linear-gradient(-45deg, #000000, #1a1a1a, #2c2c2c, #111111);
+    background-size: 400% 400%;
+    animation: galaxyShift 12s ease infinite;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 -5px 25px rgba(0, 124, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  @keyframes galaxyShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .footer-content p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-icons a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    transition: width 0.4s ease;
+    border-radius: 1px;
+  }
+
+  .footer-icons a:hover::before {
+    width: 80%;
+  }
+
+  .footer-icons a:hover {
+    color: #00f2fe;
+    transform: translateY(-3px) scale(1.1);
+    background: rgba(79, 172, 254, 0.1);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .togglebtn {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+
+    .navlinks {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .navlinks {
+      background: #222;
+    }
+
+    .navlinks.open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .skills-section,
+    .badges-section {
+      padding: 40px 15px;
+    }
+
+    .skills-section h2,
+    .badges-section h2 {
+      font-size: 2.5rem;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .skills-grid,
+    .badges-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card,
+    .badge-card {
+      padding: 25px 20px;
+    }
+
+    .skill-tabs {
+      gap: 10px;
+    }
+
+    .skill-tabs .tab {
+      padding: 10px 18px;
+      font-size: 0.9rem;
+    }
+
+    .footer-icons {
+      flex-wrap: wrap;
+    }
+
+    #darkModeToggle {
+      width: 45px;
+      height: 45px;
+      top: 15px;
+      right: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .wrapper {
+      padding: 0 15px;
+    }
+
+    .skills-section,
+    .badges-section {
+      padding: 30px 10px;
+    }
+
+    .skills-section h2,
+    .badges-section h2 {
+      font-size: 2rem;
+    }
+
+    .section-description {
+      font-size: 0.85rem;
+    }
+
+    .skills-grid,
+    .badges-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .skill-card,
+    .badge-card {
+      padding: 20px 15px;
+    }
+
+    .project-preview {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-preview i {
+      align-self: flex-start;
+    }
+
+    .badge-card img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+</style>
+
+<script>
+  // Dark Mode Toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  if (isDarkMode) {
+    body.classList.add('dark-mode');
+    darkModeToggle.textContent = '☀️';
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', isDark);
+  });
+
+  // Mobile Navigation Toggle
+  const toggleBtn = document.querySelector('.togglebtn');
+  const navLinks = document.querySelector('.navlinks');
+
+  toggleBtn.addEventListener('click', () => {
+    toggleBtn.classList.toggle('click');
+    navLinks.classList.toggle('open');
+  });
+
+  // Close nav when clicking a link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggleBtn.classList.remove('click');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Close nav when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!toggleBtn.contains(e.target) && !navLinks.contains(e.target)) {
+      toggleBtn.classList.remove('click');
+      navLinks.classList.remove('open');
+    }
+  });
+
+  // Skills Filtering
+  const tabs = document.querySelectorAll('.skill-tabs .tab');
+  const skillCards = document.querySelectorAll('.skill-card');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const category = tab.getAttribute('data-category');
+      skillCards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Toggle Project List
+  function toggleProjects(card) {
+    const isExpanded = card.classList.contains('expanded');
+    skillCards.forEach(c => c.classList.remove('expanded'));
+    if (!isExpanded) {
+      card.classList.add('expanded');
+    }
+  }
+
+  // Loading Animation
+  window.addEventListener('load', () => {
+    const loading = document.querySelector('.loading');
+    setTimeout(() => {
+      loading.style.opacity = '0';
+      setTimeout(() => {
+        loading.style.display = 'none';
+      }, 500);
+    }, 1500);
+  });
+
+  // Intersection Observer for Fade-in Animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

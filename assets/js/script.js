@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Loading animation, dark mode, navbar toggle, typed.js, smooth scroll
-  // Hide loading animation
+  // Loading animation
   setTimeout(() => {
     const loading = document.querySelector(".loading");
     if (loading) {
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.classList.toggle("click");
   });
 
-  // Close mobile menu when clicking on a link
+  // Close mobile menu when clicking a link
   navLinks.addEventListener("click", (e) => {
     if (e.target.tagName === "A") {
       navLinks.classList.remove("open");
@@ -45,19 +44,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Typed.js effect
-  var typed = new Typed(".input", {
-    strings: [
-      "Junior Full Stack Developer", 
-      "Junior Basic Game Developer", 
-      "Software Development Student",
-      "Programming Enthusiast"
-    ],
-    typeSpeed: 70,
-    backSpeed: 55,
-    loop: true,
-    backDelay: 2000
+  // Close mobile menu on window resize (for desktop view)
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove("open");
+      toggleBtn.classList.remove("click");
+    }
   });
+
+  // Typed.js effect
+  if (document.querySelector(".input")) {
+    new Typed(".input", {
+      strings: [
+        "Junior Full Stack Developer",
+        "Junior Basic Game Developer",
+        "Software Development Student",
+        "Programming Enthusiast"
+      ],
+      typeSpeed: 70,
+      backSpeed: 55,
+      loop: true,
+      backDelay: 2000
+    });
+  }
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -73,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Add intersection observer for animations
+  // Intersection observer for animations
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -84,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = '1';
         entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target); // Unobserve after animation
       }
     });
   }, observerOptions);
@@ -98,22 +108,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Certificates expansion
-  // Certificate Expansion JavaScript
   const certificateCards = document.querySelectorAll('.certificate-card');
   
   certificateCards.forEach(card => {
-    card.addEventListener('click', function(e) {
+    const toggleExpansion = (e) => {
       // Prevent expansion when clicking on links
       if (e.target.tagName === 'A' || e.target.closest('a')) {
         return;
       }
       
-      const skillsSection = this.querySelector('.skills-section');
-      const isExpanded = this.classList.contains('expanded');
+      const skillsSection = card.querySelector('.skills-section');
+      const isExpanded = card.classList.contains('expanded');
       
       // Close all other expanded cards
       certificateCards.forEach(otherCard => {
-        if (otherCard !== this) {
+        if (otherCard !== card) {
           otherCard.classList.remove('expanded');
           const otherSkillsSection = otherCard.querySelector('.skills-section');
           otherSkillsSection.classList.remove('expanded');
@@ -121,38 +130,45 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       
       // Toggle current card
-      if (isExpanded) {
-        this.classList.remove('expanded');
-        skillsSection.classList.remove('expanded');
-      } else {
-        this.classList.add('expanded');
-        skillsSection.classList.add('expanded');
+      card.classList.toggle('expanded', !isExpanded);
+      skillsSection.classList.toggle('expanded', !isExpanded);
+    };
+
+    card.addEventListener('click', toggleExpansion);
+
+    // Add keyboard support for accessibility
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleExpansion(e);
       }
     });
+
+    // Make card focusable
+    card.setAttribute('tabindex', '0');
   });
 
-  // Scroll-to-top button
-  // Scroll-to-top button
+  // Scroll-to-top button with debouncing
   const scrollTopBtn = document.getElementById("scrollTopBtn");
   let lastScrollTop = 0;
+  let scrollTimeout;
 
-  window.addEventListener("scroll", () => {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  const handleScroll = () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > lastScrollTop && currentScroll > 200) {
+        scrollTopBtn.classList.add("show");
+      } else {
+        scrollTopBtn.classList.remove("show");
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, 100); // Debounce delay
+  };
 
-    if (currentScroll > lastScrollTop) {
-      // scrolling down
-      scrollTopBtn.classList.add("show");
-    } else {
-      // scrolling up
-      scrollTopBtn.classList.remove("show");
-    }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // avoid negative
-  });
+  window.addEventListener("scroll", handleScroll);
 
   scrollTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-  
-  // Intersection observer for animations
-  // (Copy all the JS you provided earlier here)
 });

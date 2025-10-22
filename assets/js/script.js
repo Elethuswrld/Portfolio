@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Loading animation
+  //================================================================
+  // 1. LOADING ANIMATION
+  //================================================================
   setTimeout(() => {
     const loading = document.querySelector(".loading");
     if (loading) {
@@ -10,11 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 1000);
 
-  // Dark Mode Toggle
+  //================================================================
+  // 2. DARK MODE TOGGLE & PERSISTENCE
+  //================================================================
   const darkModeToggle = document.getElementById("darkModeToggle");
-  const userPrefersDark = localStorage.getItem("darkMode") === "enabled" || 
-                         window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const userPrefersDark =
+    localStorage.getItem("darkMode") === "enabled" ||
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+  // Set initial state
   if (userPrefersDark) {
     document.body.classList.add("dark-mode");
     darkModeToggle.textContent = "☀️";
@@ -27,13 +33,31 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
   });
 
-  // Navbar Toggle
+  //================================================================
+  // 3. NAVIGATION (TOGGLE & ACTIVE LINK)
+  //================================================================
   const toggleBtn = document.querySelector(".togglebtn");
   const navLinks = document.querySelector(".navlinks");
 
+  // Active Link Setter
+  const path = window.location.pathname;
+  const currentLink = document.querySelector(`.navlinks li a[href="${path}"]`);
+
+  // Fallback for root path
+  if (!currentLink && (path === "/" || path.endsWith("index.html"))) {
+    document
+      .querySelector('.navlinks li a[href="/index.html"]')
+      .classList.add("active-page");
+  } else if (currentLink) {
+    currentLink.classList.add("active-page");
+  }
+
+  // Navbar Toggle functionality
   toggleBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
+    const isExpanded = navLinks.classList.toggle("open");
     toggleBtn.classList.toggle("click");
+    // Update ARIA attribute for accessibility
+    toggleBtn.setAttribute("aria-expanded", isExpanded);
   });
 
   // Close mobile menu when clicking a link
@@ -41,129 +65,141 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target.tagName === "A") {
       navLinks.classList.remove("open");
       toggleBtn.classList.remove("click");
+      toggleBtn.setAttribute("aria-expanded", "false");
     }
   });
 
-  // Close mobile menu on window resize (for desktop view)
+  // Close mobile menu on window resize
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       navLinks.classList.remove("open");
       toggleBtn.classList.remove("click");
+      toggleBtn.setAttribute("aria-expanded", "false");
     }
   });
 
-  // Typed.js effect
+  //================================================================
+  // 4. TYPED.JS EFFECT
+  //================================================================
   if (document.querySelector(".input")) {
     new Typed(".input", {
       strings: [
         "Junior Full Stack Developer",
         "Junior Basic Game Developer",
-        "Software Development Student",
-        "Programming Enthusiast"
+        "Programming Enthusiast",
       ],
       typeSpeed: 70,
       backSpeed: 55,
       loop: true,
-      backDelay: 2000
+      backDelay: 2000,
     });
   }
 
+  //================================================================
+  // 5. SMOOTH SCROLLING & INTERSECTION OBSERVER
+  //================================================================
   // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector(this.getAttribute("href"));
       if (target) {
         target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+          behavior: "smooth",
+          block: "start",
         });
       }
     });
   });
 
-  // Intersection observer for animations
+  // Intersection observer for footer animation
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target); // Unobserve after animation
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // Observe footer for entrance animation
-  const footer = document.querySelector('.site-footer');
+  const footer = document.querySelector(".site-footer");
   if (footer) {
-    footer.style.opacity = '0';
-    footer.style.transform = 'translateY(50px)';
-    footer.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    // Initial setup for animation
+    footer.style.opacity = "0";
+    footer.style.transform = "translateY(50px)";
+    footer.style.transition = "opacity 0.6s ease, transform 0.6s ease";
     observer.observe(footer);
   }
 
-  // Certificates expansion
-  const certificateCards = document.querySelectorAll('.certificate-card');
-  
-  certificateCards.forEach(card => {
+  //================================================================
+  // 6. CERTIFICATES EXPANSION (with ARIA)
+  //================================================================
+  const certificateCards = document.querySelectorAll(".certificate-card");
+
+  certificateCards.forEach((card) => {
+    const skillsSection = card.querySelector(".skills-section");
+
+    // Initial ARIA setup for focusable cards
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button"); // Treat the card like a button
+    card.setAttribute("aria-expanded", "false");
+
     const toggleExpansion = (e) => {
-      // Prevent expansion when clicking on links
-      if (e.target.tagName === 'A' || e.target.closest('a')) {
+      // Prevent expansion when clicking on internal links
+      if (e.target.tagName === "A" || e.target.closest("a")) {
         return;
       }
-      
-      const skillsSection = card.querySelector('.skills-section');
-      const isExpanded = card.classList.contains('expanded');
-      
+
+      const isExpanded = card.classList.contains("expanded");
+
       // Close all other expanded cards
-      certificateCards.forEach(otherCard => {
-        if (otherCard !== card) {
-          otherCard.classList.remove('expanded');
-          const otherSkillsSection = otherCard.querySelector('.skills-section');
-          otherSkillsSection.classList.remove('expanded');
+      certificateCards.forEach((otherCard) => {
+        if (otherCard !== card && otherCard.classList.contains("expanded")) {
+          otherCard.classList.remove("expanded");
+          otherCard
+            .querySelector(".skills-section")
+            .classList.remove("expanded");
+          otherCard.setAttribute("aria-expanded", "false");
         }
       });
-      
-      // Toggle current card
-      card.classList.toggle('expanded', !isExpanded);
-      skillsSection.classList.toggle('expanded', !isExpanded);
+
+      // Toggle current card state
+      card.classList.toggle("expanded", !isExpanded);
+      skillsSection.classList.toggle("expanded", !isExpanded);
+
+      // Update ARIA attribute
+      card.setAttribute("aria-expanded", String(!isExpanded));
     };
 
-    card.addEventListener('click', toggleExpansion);
+    card.addEventListener("click", toggleExpansion);
 
     // Add keyboard support for accessibility
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         toggleExpansion(e);
       }
     });
-
-    // Make card focusable
-    card.setAttribute('tabindex', '0');
   });
 
-  // Scroll-to-top button with debouncing
+  //================================================================
+  // 7. SCROLL-TO-TOP BUTTON (Simplified)
+  //================================================================
   const scrollTopBtn = document.getElementById("scrollTopBtn");
-  let lastScrollTop = 0;
-  let scrollTimeout;
 
   const handleScroll = () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      if (currentScroll > lastScrollTop && currentScroll > 200) {
-        scrollTopBtn.classList.add("show");
-      } else {
-        scrollTopBtn.classList.remove("show");
-      }
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    }, 100); // Debounce delay
+    // Show button if scroll position is beyond 300px
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
   };
 
   window.addEventListener("scroll", handleScroll);

@@ -1,0 +1,925 @@
+/*================================================================
+    1. GENERAL STYLES & RESETS
+================================================================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.wrapper {
+  max-width: 1200px; /* Increased max-width for better desktop layout */
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/*================================================================
+    2. HEADER & NAVIGATION (STICKY)
+================================================================*/
+header {
+  /* --- STICKY CHANGES --- */
+  position: fixed; /* Fixes the header to the viewport */
+  top: 0; /* Positions it at the very top */
+  left: 0;
+  right: 0;
+  background-color: white; /* Crucial: Prevents content from showing through */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  /* ---------------------- */
+
+  padding: 20px 0; /* Reduced padding for a smaller, fixed header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Increased z-index to ensure it is above everything else */
+}
+
+/* Update for Dark Mode */
+.dark-mode header {
+  background-color: #111;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit; /* Ensure link color is manageable by dark mode */
+}
+
+.logo i {
+  width: 45px;
+  height: 45px;
+  background-color: #007ced;
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.logo i:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 124, 237, 0.3);
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Navigation Menu */
+nav {
+  position: relative;
+}
+
+.togglebtn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background: none;
+  z-index: 10;
+}
+
+.togglebtn span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.togglebtn.click span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.togglebtn.click span:nth-child(2) {
+  opacity: 0;
+}
+
+.togglebtn.click span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navlinks li a {
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+.navlinks li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #007ced;
+  transition: width 0.3s ease;
+}
+
+/* Active and Hover States */
+.navlinks li a:hover,
+.navlinks li a.active-page {
+  color: #007ced;
+}
+
+.navlinks li a:hover::after,
+.navlinks li a.active-page::after {
+  width: 100%;
+}
+
+/*================================================================
+    3. HERO SECTION (MAIN) - ALIGNMENT FIXES
+================================================================*/
+.hero-header {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  /* PUSH CONTENT DOWN: Compensate for the fixed header height (approx. 80px) */
+  padding-top: 80px;
+  /* FLEXBOX for perfect vertical centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content Container (Image and Text) */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Nice spacing between content blocks */
+  align-items: center;
+  gap: 40px;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  /* margin-top: -80px is REMOVED/FIXED by using padding-top on .hero-header */
+}
+
+.hero-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 15px solid #007ced;
+  margin: 1rem;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+/* Hero Picture Hover Animation */
+.hero-pic::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: linear-gradient(45deg, #007ced, #00a8ff, #007ced);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-pic:hover::before {
+  opacity: 1;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-pic:hover img {
+  transform: scale(1.1);
+}
+
+/* Hero Text */
+.hero-text {
+  max-width: 500px;
+  text-align: left; /* Default alignment for desktop */
+  padding: 0;
+}
+
+.hero-text h2 {
+  /* Changed from h5 */
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.hero-text .input {
+  color: #007ced;
+  font-weight: 600;
+}
+
+.hero-text h1 {
+  color: #333;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #007ced, #00a8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-text p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start; /* Align buttons to the left on desktop */
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  background: #007ced;
+  color: #fff;
+  border: 2px solid #007ced;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 124, 237, 0.3);
+}
+
+.btn.active {
+  background: transparent;
+  color: #007ced;
+}
+
+.btn.active:hover {
+  background: #007ced;
+  color: white;
+}
+
+/* Social Icons */
+.social {
+  display: flex;
+  justify-content: flex-start; /* Align social icons to the left on desktop */
+  gap: 20px;
+}
+
+.social a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.social a i {
+  color: #666;
+  font-size: 18px;
+  transition: all 0.4s ease;
+}
+
+.social a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific Social Icon Colors */
+.social a:nth-child(1):hover {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+.social a:nth-child(1):hover i {
+  color: white;
+  transform: scale(1.2);
+}
+.social a:nth-child(2):hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+}
+.social a:nth-child(2):hover i {
+  color: white;
+  transform: scale(1.2);
+}
+.social a:nth-child(3):hover {
+  background: #e1306c;
+  border-color: #e1306c;
+}
+.social a:nth-child(3):hover i {
+  color: white;
+  transform: scale(1.2);
+}
+.social a:nth-child(4):hover {
+  background: #181717;
+  border-color: #181717;
+} /* GitHub added for consistency */
+.social a:nth-child(4):hover i {
+  color: white;
+  transform: scale(1.2);
+}
+
+/*================================================================
+    4. CERTIFICATES SECTION - GRID ALIGNMENT
+================================================================*/
+.certificates-section {
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.certificates-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.certificates-section p {
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+  color: #666;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto; /* Center the description paragraph */
+}
+
+.certificates-grid {
+  display: grid;
+  /* Optimized Grid: min size 280px for a better look on tablets/desktops */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.certificate-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  /* Use flex to ensure content is stacked and aligned nicely */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.certificate-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 124, 237, 0.15); /* Subtle blue shadow on hover */
+}
+
+/* Expanded Card State */
+.certificate-card.expanded {
+  background: linear-gradient(135deg, #007ced 0%, #00a8ff 100%);
+  color: white;
+  transform: none;
+  box-shadow: 0 10px 25px rgba(0, 124, 237, 0.4);
+  border: 3px solid white;
+}
+
+.certificate-title {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #333;
+  margin-bottom: 15px;
+  min-height: 40px; /* Ensures vertical alignment when titles are different lengths */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90%; /* Keep title contained inside card */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.certificate-card.expanded .certificate-title {
+  color: white;
+}
+
+.certificate-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+}
+
+.certificate-card .btn {
+  margin-top: 15px;
+}
+
+.certificate-card.expanded .btn {
+  background: white;
+  color: #007ced;
+  border: 2px solid white;
+}
+
+/* Expandable Skills Section */
+.skills-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  padding: 0;
+}
+
+.skills-section.expanded {
+  max-height: 500px; /* Sufficient height for all content */
+  padding: 20px 0;
+}
+
+.certificate-description {
+  margin: 15px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.skill-tag {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.expand-indicator {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+  color: #007ced;
+}
+
+.certificate-card.expanded .expand-indicator {
+  transform: rotate(180deg);
+  color: white;
+}
+
+/*================================================================
+    5. FOOTER & UTILITIES
+================================================================*/
+.site-footer {
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #2c2c2c, #111111);
+  background-size: 400% 400%;
+  animation: galaxyShift 12s ease infinite;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 -5px 25px rgba(0, 124, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes galaxyShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.footer-content p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-icons a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-icons a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  transition: width 0.4s ease;
+  border-radius: 1px;
+}
+
+.footer-icons a:hover::before {
+  width: 80%;
+}
+
+.footer-icons a:hover {
+  color: #00f2fe;
+  transform: translateY(-3px) scale(1.1);
+  background: rgba(79, 172, 254, 0.1);
+}
+
+/* Scroll to Top Button Styles */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Dark Mode Toggle (Final Position) */
+#darkModeToggle {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #007ced;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  z-index: 1001; /* Must be higher than the header z-index (1000) */
+  box-shadow: 0 4px 15px rgba(0, 124, 237, 0.3);
+}
+
+#darkModeToggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 124, 237, 0.4);
+}
+
+/* Loading Animation (Visibility handled by JS) */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loading span {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #007ced;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loading span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.loading span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+.loading span:nth-child(3) {
+  animation-delay: 0s;
+}
+.loading span:nth-child(4) {
+  animation-delay: 0.16s;
+}
+.loading span:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/*================================================================
+    6. DARK MODE STYLES
+================================================================*/
+.dark-mode {
+  background-color: #111;
+  color: #ddd;
+}
+
+.dark-mode .hero-header {
+  background: #111;
+}
+.dark-mode .logo-text {
+  color: #ddd;
+}
+.dark-mode .togglebtn span {
+  background: #ddd;
+}
+.dark-mode .navlinks li a {
+  color: #ddd;
+}
+.dark-mode .hero-text h1 {
+  color: #ddd;
+}
+.dark-mode .hero-text h2 {
+  color: #bbb;
+}
+.dark-mode .hero-text p {
+  color: #aaa;
+}
+.dark-mode .social a {
+  background: #222;
+  border-color: #333;
+}
+.dark-mode .social a i {
+  color: #ddd;
+}
+.dark-mode #darkModeToggle {
+  background: #333;
+}
+.dark-mode .certificates-section {
+  background: #181818;
+}
+.dark-mode .certificates-section h2 {
+  color: #eee;
+}
+.dark-mode .certificates-section p {
+  color: #aaa;
+}
+
+.dark-mode .certificate-card {
+  background: #222;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+.dark-mode .certificate-title {
+  color: #ddd;
+}
+
+.dark-mode .certificate-card.expanded {
+  /* Keep the bright gradient for strong visual distinction */
+  background: linear-gradient(135deg, #007ced 0%, #00a8ff 100%);
+  border: 3px solid #222;
+}
+.dark-mode .certificate-card.expanded .btn {
+  background: #111;
+  color: #00a8ff;
+  border: 2px solid #111;
+}
+.dark-mode .certificate-card.expanded .expand-indicator {
+  color: white;
+}
+.dark-mode .certificate-card img {
+  border: 1px solid #333;
+}
+
+/*================================================================
+    7. RESPONSIVE DESIGN (MEDIA QUERIES)
+================================================================*/
+@media (max-width: 992px) {
+  .container {
+    /* Re-center the hero content vertically for mid-sized screens */
+    margin-top: 0;
+  }
+
+  /* Ensure content is pushed down for fixed header on smaller screens too */
+  .hero-header {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header & Nav Toggle */
+  header {
+    /* Keep existing fixed styles */
+  }
+
+  .togglebtn {
+    display: flex;
+    position: static; /* Position normally inside the header flex */
+    transform: none;
+  }
+
+  .navlinks {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 50; /* Below the dark mode button and header */
+  }
+
+  .dark-mode .navlinks {
+    background: #222;
+  }
+
+  .navlinks.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hero Section */
+  .container {
+    flex-direction: column;
+    padding: 40px 0;
+    margin-top: 0; /* No need for negative margin on mobile */
+  }
+
+  .hero-text {
+    text-align: center; /* Center text on mobile */
+    padding: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-pic {
+    width: 250px;
+    height: 250px;
+    border-width: 10px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center buttons on mobile */
+  }
+
+  .social {
+    justify-content: center; /* Center social icons on mobile */
+  }
+
+  .btn {
+    width: 250px; /* Make buttons wider for easier tapping */
+  }
+
+  /* Dark Mode Toggle on Mobile (Final Position) */
+  #darkModeToggle {
+    top: 20px; /* Aligned with the header on mobile */
+    right: 80px; /* Moved away from the Navbar Toggle button */
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 0 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  .btn {
+    width: 100%; /* Full width buttons on small phones */
+    max-width: 250px;
+  }
+
+  /* Dark Mode Toggle on very small screens */
+  #darkModeToggle {
+    width: 45px;
+    height: 45px;
+    top: 15px;
+    right: 70px;
+  }
+}

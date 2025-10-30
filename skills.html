@@ -1998,7 +1998,13 @@
             // Populate projects
             projects.forEach((proj) => {
               const cardLink = document.createElement("a");
-              cardLink.href = proj.live !== "#" ? proj.live : proj.repo; // Link to live or repo
+              let targetUrl = proj.live !== "#" ? proj.live : proj.repo;
+              if (targetUrl === "#") {
+                targetUrl = `https://github.com/search?q=${encodeURIComponent(
+                  skill
+                )}+user%3AElethuswrld&type=repositories`;
+              }
+              cardLink.href = targetUrl;
               cardLink.target = "_blank";
               cardLink.rel = "noopener noreferrer";
               cardLink.classList.add("project-card-item");
@@ -2028,15 +2034,18 @@
               const linkContainer = document.createElement("div");
               linkContainer.style.marginTop = "auto";
 
-              const repoLink = document.createElement("a");
-              repoLink.href = proj.repo;
-              repoLink.target = "_blank";
-              repoLink.classList.add("github-project");
-              repoLink.innerHTML = '<i class="fab fa-github"></i> Repository';
-              repoLink.style.marginRight = "15px";
+              if (proj.repo !== "#") {
+                const repoLink = document.createElement("a");
+                repoLink.href = proj.repo;
+                repoLink.target = "_blank";
+                repoLink.classList.add("github-project");
+                repoLink.innerHTML = '<i class="fab fa-github"></i> Repository';
+                repoLink.style.marginRight = "15px";
+                linkContainer.appendChild(repoLink);
+              }
 
-              const liveLink = document.createElement("a");
               if (proj.live !== "#") {
+                const liveLink = document.createElement("a");
                 liveLink.href = proj.live;
                 liveLink.target = "_blank";
                 liveLink.classList.add("github-project");
@@ -2045,7 +2054,6 @@
                 linkContainer.appendChild(liveLink);
               }
 
-              linkContainer.appendChild(repoLink);
               info.appendChild(linkContainer);
               cardLink.appendChild(info);
               projectsDisplay.appendChild(cardLink);

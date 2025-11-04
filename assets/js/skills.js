@@ -117,6 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (projects.length > 0) {
         projectsDisplay.classList.add("visible");
+        projectsDisplay.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
       }
     }, 250);
   };

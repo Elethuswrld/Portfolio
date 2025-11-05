@@ -197,141 +197,81 @@
       </div>
     </div>
 
-    <section class="recommendations">
+    <section class="recommendations" id="review-section">
       <div class="wrapper">
-        <h2>What People Say</h2>
-        <div class="recommendations-grid">
-          <div class="recommendation-card">
-            <div class="recommendation-header">
-              <div class="recommendation-avatar">JS</div>
-              <div class="recommendation-info">
-                <h4>John Smith</h4>
-                <p>Senior Developer at TechCorp</p>
-              </div>
+        <h2>Leave a Review</h2>
+        <p style="max-width: 700px; margin: 0 auto 2rem auto;">
+          If we've worked together or you've reviewed my work, I'd love to hear
+          your feedback. Please leave a review below!
+        </p>
+
+        <div id="reviewFormMessage" class="form-message"></div>
+
+        <form
+          id="reviewForm"
+          action="https://formspree.io/f/mzzjqajo"
+          method="POST"
+          class="review-form"
+        >
+          <div class="review-form-grid">
+            <div class="form-group">
+              <label for="review-name">Your Name *</label>
+              <input
+                type="text"
+                id="review-name"
+                name="name"
+                required
+                autocomplete="name"
+              />
             </div>
-            <div class="recommendation-text">
-              Elethu demonstrates exceptional problem-solving skills and a
-              genuine passion for development. His technical expertise and
-              communication make him a valuable team member.
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="form-group">
+              <label for="review-role">Your Role / Company</label>
+              <input type="text" id="review-role" name="role" />
             </div>
           </div>
 
-          <div class="recommendation-card">
-            <div class="recommendation-header">
-              <div class="recommendation-avatar">MJ</div>
-              <div class="recommendation-info">
-                <h4>Maria Johnson</h4>
-                <p>Project Manager at InnovateLab</p>
-              </div>
-            </div>
-            <div class="recommendation-text">
-              Working with Elethu was fantastic. His attention to detail and
-              understanding of inclusive design principles really impressed our
-              team.
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-          </div>
-
-          <div class="recommendation-card">
-            <div class="recommendation-header">
-              <div class="recommendation-avatar">DK</div>
-              <div class="recommendation-info">
-                <h4>David Kim</h4>
-                <p>Developer at DataScience Pro</p>
-              </div>
-            </div>
-            <div class="recommendation-text">
-              Elethu's knowledge of algorithms and ability to explain complex
-              concepts clearly make him stand out. His commitment to learning is
-              evident.
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+          <div class="form-group">
+            <label>Your Rating *</label>
+            <div class="star-rating">
+              <input type="radio" id="star5" name="rating" value="5" required /><label
+                for="star5"
+                title="5 stars"
+              ></label>
+              <input type="radio" id="star4" name="rating" value="4" /><label
+                for="star4"
+                title="4 stars"
+              ></label>
+              <input type="radio" id="star3" name="rating" value="3" /><label
+                for="star3"
+                title="3 stars"
+              ></label>
+              <input type="radio" id="star2" name="rating" value="2" /><label
+                for="star2"
+                title="2 stars"
+              ></label>
+              <input type="radio" id="star1" name="rating" value="1" /><label
+                for="star1"
+                title="1 star"
+              ></label>
             </div>
           </div>
 
-          <div class="recommendation-card">
-            <div class="recommendation-header">
-              <div class="recommendation-avatar">LC</div>
-              <div class="recommendation-info">
-                <h4>Lisa Chen</h4>
-                <p>UX Designer at Creative Solutions</p>
-              </div>
-            </div>
-            <div class="recommendation-text">
-              Elethu brings a unique blend of technical skills and user
-              experience understanding. His work on accessible solutions is
-              impressive.
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
+          <div class="form-group">
+            <label for="review-message">Review *</label>
+            <textarea
+              id="review-message"
+              name="message"
+              rows="5"
+              placeholder="What was your experience like?"
+              required
+            ></textarea>
           </div>
 
-          <div class="recommendation-card">
-            <div class="recommendation-header">
-              <div class="recommendation-avatar">RT</div>
-              <div class="recommendation-info">
-                <h4>Robert Taylor</h4>
-                <p>Software Engineering Lead</p>
-              </div>
-            </div>
-            <div class="recommendation-text">
-              Elethu's dedication to professional development is evident in his
-              quality work and eagerness to tackle new challenges.
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-          </div>
-
-          <div class="recommendation-card">
-            <div class="recommendation-header">
-              <div class="recommendation-avatar">AS</div>
-              <div class="recommendation-info">
-                <h4>Anna Speciale</h4>
-                <p>Software Engineer</p>
-              </div>
-            </div>
-            <div class="recommendation-text">
-              Collaborating with Elethu was a pleasure. His understanding of
-              both technical and practical aspects of development is
-              commendable.
-            </div>
-            <div class="stars" aria-label="5 out of 5 stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-          </div>
-        </div>
+          <button type="submit" class="submit-btn">
+            <span>Submit Review</span>
+            <i class="fas fa-check" style="margin-left: 0.5rem"></i>
+          </button>
+        </form>
       </div>
     </section>
 
@@ -809,6 +749,23 @@
       }
 
       /* Recommendations Section */
+      .review-form {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .review-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      /* Star Rating */
+
       .recommendations {
         background: #ffffff;
         padding: 3rem 2rem;
@@ -826,6 +783,51 @@
         color: #007ced;
         font-weight: 600;
       }
+
+      .star-rating {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 5px;
+      }
+
+      .star-rating input {
+        display: none;
+      }
+
+      .star-rating label {
+        font-size: 2rem;
+        color: #ddd;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      .star-rating label::before {
+        content: "★";
+      }
+
+      .star-rating input:checked ~ label,
+      .star-rating label:hover,
+      .star-rating label:hover ~ label {
+        color: #f59e0b;
+      }
+
+      .dark-mode .review-form {
+        background: #1f2937;
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+      }
+
+      .dark-mode .star-rating label {
+        color: #4a5568;
+      }
+
+      .dark-mode .star-rating input:checked ~ label,
+      .dark-mode .star-rating label:hover,
+      .dark-mode .star-rating label:hover ~ label {
+        color: #f59e0b;
+      }
+
+      /* End Star Rating */
 
       .recommendations-grid {
         display: grid;
@@ -1148,6 +1150,11 @@
         background: #1f2937;
       }
 
+      .dark-mode .review-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
       .dark-mode .recommendations h2 {
         color: #60a5fa;
       }
@@ -1281,6 +1288,11 @@
           grid-template-columns: 1fr;
         }
 
+      .review-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
         #darkModeToggle {
           width: 45px;
           height: 45px;
@@ -1404,6 +1416,7 @@
         const formMessage = document.getElementById("formMessage");
         const submitBtn = contactForm.querySelector(".submit-btn");
         const formURL = contactForm.getAttribute("action");
+        const reviewForm = document.getElementById("reviewForm");
 
         function showMessage(text, type) {
           formMessage.textContent = text;
@@ -1490,6 +1503,85 @@
             setSubmitting(false, originalText);
           }
         });
+
+        // === Review Form Handling ===
+        if (reviewForm) {
+          const reviewMessageEl = document.getElementById("reviewFormMessage");
+          const reviewSubmitBtn = reviewForm.querySelector(".submit-btn");
+          const reviewFormURL = reviewForm.getAttribute("action");
+
+          reviewForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            if (
+              reviewFormURL === "YOUR_FORMSPREE_ENDPOINT_HERE" ||
+              reviewFormURL === "#" ||
+              !reviewFormURL.startsWith("http")
+            ) {
+              showMessage(
+                "⚠️ Form endpoint not configured. Please update the action URL.",
+                "error",
+                reviewMessageEl
+              );
+              return;
+            }
+
+            const originalText = reviewSubmitBtn.innerHTML;
+            setSubmitting(true, originalText, reviewSubmitBtn);
+            reviewMessageEl.classList.remove("show", "success", "error");
+
+            try {
+              const response = await fetch(reviewFormURL, {
+                method: "POST",
+                body: new FormData(reviewForm),
+                headers: {
+                  Accept: "application/json",
+                },
+              });
+
+              if (response.ok) {
+                showMessage(
+                  "Thank you for your review! Your feedback is greatly appreciated.",
+                  "success",
+                  reviewMessageEl
+                );
+                reviewForm.reset();
+              } else {
+                const data = await response.json();
+                const firstError =
+                  data.errors?.[0]?.message || "An unknown error occurred.";
+                showMessage(`Error: ${firstError}`, "error", reviewMessageEl);
+              }
+            } catch (error) {
+              console.error("Review form submission failed:", error);
+              showMessage(
+                "Network error. Please check your connection.",
+                "error",
+                reviewMessageEl
+              );
+            } finally {
+              setSubmitting(false, originalText, reviewSubmitBtn);
+            }
+          });
+        }
+
+        function showMessage(text, type, messageEl) {
+          if (!messageEl) return;
+          messageEl.textContent = text;
+          messageEl.className = `form-message show ${type}`;
+        }
+
+        function setSubmitting(isSubmitting, originalText, btnEl) {
+          if (!btnEl) return;
+          if (isSubmitting) {
+            btnEl.innerHTML =
+              '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            btnEl.disabled = true;
+          } else {
+            btnEl.innerHTML = originalText;
+            btnEl.disabled = false;
+          }
+        }
 
         // === Intersection Observer for Animations ===
         const observerOptions = {

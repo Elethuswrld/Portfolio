@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Elethu's Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/contact.css" />
+  </head>
+  <body>
+    <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <main class="hero-header">
+      <div class="wrapper">
+        <header>
+          <a href="/index.html" class="logo" aria-label="Elethuswrld Home">
+            <i class="fa-solid fa-e"></i>
+            <div class="logo-text">Elethuswrld</div>
+          </a>
+          <nav role="navigation">
+            <button
+              class="togglebtn"
+              aria-expanded="false"
+              aria-controls="nav-links-menu"
+              aria-label="Toggle navigation menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="navlinks" id="nav-links-menu">
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/skills.html">Skills</a></li>
+              <li><a href="/gamedev.html">Game Dev</a></li>
+              <li><a href="/contact.html" class="active">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <section class="contact-page-section">
+          <div class="contact-header">
+            <h1>Get In Touch</h1>
+            <p>
+              I'm open to new opportunities and collaborations. Whether you have
+              a project, want to discuss development, or just say hi, I'd love
+              to connect!
+            </p>
+          </div>
+
+          <div class="contact-content-grid">
+            <!-- Left Side: Contact Form -->
+            <div class="contact-form-container">
+              <h2>Send a Message</h2>
+              <div id="formMessage" class="form-message"></div>
+              <form
+                id="contactForm"
+                action="https://formspree.io/f/mzzjqajo"
+                method="POST"
+              >
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject *</label>
+                  <input type="text" id="subject" name="subject" required />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+              </form>
+            </div>
+
+            <!-- Right Side: Contact Info -->
+            <div class="contact-info-container">
+              <h2>Contact Info</h2>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p>elethuelza03@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+27 (79) 363 2228</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Location</h4>
+                  <p>Cape Town, South Africa</p>
+                </div>
+              </div>
+
+              <h2 style="margin-top: 40px">Follow Me</h2>
+              <div class="social-links">
+                <a
+                  href="https://www.linkedin.com/in/elethu-cotyi-b48409237/"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://github.com/Elethuswrld"
+                  target="_blank"
+                  aria-label="GitHub"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review Section -->
+          <div class="review-section">
+            <h2>Leave a Review</h2>
+            <p>If we've worked together, I'd love to hear your feedback.</p>
+            <div id="reviewFormMessage" class="form-message"></div>
+            <form
+              id="reviewForm"
+              action="https://formspree.io/f/mzzjqajo"
+              method="POST"
+              class="review-form"
+            >
+              <div class="review-form-grid">
+                <div class="form-group">
+                  <label for="review-name">Your Name *</label>
+                  <input type="text" id="review-name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="review-role">Your Role / Company</label>
+                  <input type="text" id="review-role" name="role" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Your Rating *</label>
+                <div class="star-rating">
+                  <input type="radio" id="star5" name="rating" value="5" required /><label for="star5"></label>
+                  <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                  <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                  <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                  <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="review-message">Review *</label>
+                <textarea
+                  id="review-message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>© 2024 Elethuswrld. All rights reserved.</p>
+        <div class="footer-icons">
+          <a href="#" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/elethu-cotyi-b48409237/"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://github.com/Elethuswrld" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/contact.js"></script>
+  </body>
+</html>

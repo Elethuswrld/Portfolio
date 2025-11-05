@@ -20,47 +20,6 @@
   transition: color 0.3s ease;
 }
 
-/* NEW: Design Philosophy and Exploring Sections */
-.design-philosophy,
-.currently-exploring {
-  max-width: 900px;
-  margin: 0 auto 40px;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: left;
-  background: #f4f8ff;
-  border: 1px solid #d0e0ff;
-  box-shadow: 0 2px 10px rgba(0, 124, 237, 0.05);
-}
-
-.design-philosophy h3,
-.currently-exploring h3 {
-  font-size: 1.4rem;
-  color: #007ced;
-  margin-bottom: 10px;
-}
-
-.design-philosophy p {
-  font-size: 1rem;
-  color: #555;
-}
-
-.exploring-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.exploring-tags .tag {
-  background-color: #007ced;
-  color: #fff;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
 /* Styles for the skill controls container */
 .skill-controls {
   display: flex;
@@ -142,7 +101,7 @@
 .skills-grid {
   display: grid;
   /* Reduce minmax to allow for smaller card sizes and more columns */
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 20px;
 }
 
@@ -200,33 +159,12 @@
   overflow: hidden;
 }
 
-.proficiency-percentage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.skill-card:hover .proficiency-percentage {
-  opacity: 1;
-}
-
 .progress-fill {
   height: 100%;
   background: #007ced;
   border-radius: 4px;
   transition: width 0.5s ease-in-out;
 }
-
-.skill-card:hover .progress-fill {
-  filter: brightness(1.2) drop-shadow(0 0 4px rgba(0, 124, 237, 0.5));
-}
-
 /* Project Display Styles */
 
 .projects-display-grid {
@@ -360,17 +298,6 @@ body.dark-mode .badges-section h2 {
 
 body.dark-mode .section-description {
   color: #aaa;
-}
-
-body.dark-mode .design-philosophy,
-body.dark-mode .currently-exploring {
-  background: #2a2a2a;
-  border-color: #444;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-body.dark-mode .design-philosophy p {
-  color: #ccc;
 }
 
 body.dark-mode .skill-sort {

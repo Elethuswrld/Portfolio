@@ -142,7 +142,7 @@
 .skills-grid {
   display: grid;
   /* Reduce minmax to allow for smaller card sizes and more columns */
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
 }
 
@@ -200,11 +200,31 @@
   overflow: hidden;
 }
 
+.proficiency-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover .proficiency-percentage {
+  opacity: 1;
+}
+
 .progress-fill {
   height: 100%;
   background: #007ced;
   border-radius: 4px;
   transition: width 0.5s ease-in-out;
+}
+
+.skill-card:hover .progress-fill {
+  filter: brightness(1.2) drop-shadow(0 0 4px rgba(0, 124, 237, 0.5));
 }
 
 /* Project Display Styles */

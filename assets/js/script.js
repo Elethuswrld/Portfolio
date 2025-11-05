@@ -156,28 +156,24 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const isExpanded = card.classList.contains("expanded");
+      const isActive = card.classList.contains("active");
 
       // Close all other expanded cards
       certificateCards.forEach((otherCard) => {
-        if (otherCard !== card && otherCard.classList.contains("expanded")) {
-          otherCard.classList.remove("expanded");
-          const otherSkills = otherCard.querySelector(".skills-section");
-          if (otherSkills) {
-            otherSkills.classList.remove("expanded");
-          }
+        if (otherCard !== card && otherCard.classList.contains("active")) {
+          otherCard.classList.remove("active");
           otherCard.setAttribute("aria-expanded", "false");
         }
       });
 
       // Toggle current card state
-      card.classList.toggle("expanded", !isExpanded);
-      if (skillsSection) {
-        skillsSection.classList.toggle("expanded", !isExpanded);
+      if (isActive) {
+        card.classList.remove("active");
+        card.setAttribute("aria-expanded", "false");
+      } else {
+        card.classList.add("active");
+        card.setAttribute("aria-expanded", "true");
       }
-
-      // Update ARIA attribute
-      card.setAttribute("aria-expanded", String(!isExpanded));
     };
 
     card.addEventListener("click", toggleExpansion);

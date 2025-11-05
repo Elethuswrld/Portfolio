@@ -142,6 +142,36 @@ body.dark-mode .navlinks a {
   transition: all 0.3s ease;
 }
 
+/* Mobile Navigation Menu */
+@media (max-width: 768px) {
+  .togglebtn {
+    display: flex;
+  }
+  .navlinks {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 50;
+  }
+  .navlinks.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  body.dark-mode .navlinks {
+    background: #2a2a2a;
+  }
+}
+
 /* Dark Mode Toggle Button */
 body.dark-mode .togglebtn span {
   background-color: #f0f0f0;

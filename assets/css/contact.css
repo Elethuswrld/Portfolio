@@ -272,3 +272,11 @@ body.dark-mode .form-message.error {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-form-container,
+  .contact-info-container,
+  .review-form {
+    padding: 20px;
+  }
+}

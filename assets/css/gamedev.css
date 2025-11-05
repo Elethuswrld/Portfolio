@@ -144,3 +144,16 @@ body.dark-mode .tech-tag {
   background: #444;
   color: #f0f0f0;
 }
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  .gamedev-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .gamedev-hero-icon i {
+    font-size: 3rem;
+  }
+}
+}

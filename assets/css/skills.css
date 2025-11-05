@@ -246,6 +246,27 @@
   flex-grow: 1;
 }
 
+.project-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.project-tag {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+body.dark-mode .project-tag {
+  background-color: #3730a3;
+  color: #e0e7ff;
+}
+
 /* --- BADGES GRID STYLES --- */
 .badges-grid {
   display: grid;

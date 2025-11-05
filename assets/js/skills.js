@@ -87,6 +87,20 @@ document.addEventListener("DOMContentLoaded", () => {
         info.appendChild(projTitle);
         info.appendChild(projDesc);
 
+        // Create and append project tags if they exist
+        if (proj.tags && Array.isArray(proj.tags)) {
+          const tagsContainer = document.createElement("div");
+          tagsContainer.classList.add("project-tags-container");
+
+          proj.tags.forEach((tagText) => {
+            const tag = document.createElement("span");
+            tag.classList.add("project-tag");
+            tag.textContent = tagText;
+            tagsContainer.appendChild(tag);
+          });
+          info.appendChild(tagsContainer);
+        }
+
         const linkContainer = document.createElement("div");
         linkContainer.style.marginTop = "auto";
 

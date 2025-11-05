@@ -189,28 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //================================================================
-  // 7. CERTIFICATE GRID TOGGLING
-  //================================================================
-  const toggleButtons = document.querySelectorAll(".toggle-certs-btn");
-
-  toggleButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const grid = button.previousElementSibling; // The .certificates-grid
-      const isExpanded = grid.classList.contains("expanded");
-
-      grid.classList.toggle("expanded");
-      button.setAttribute("aria-expanded", !isExpanded);
-
-      if (!isExpanded) {
-        button.textContent = "Show Less";
-      } else {
-        button.textContent = "Show More";
-        grid.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    });
-  });
-
-  //================================================================
   // 7. SCROLL-TO-TOP BUTTON (Simplified)
   //================================================================
   const scrollTopBtn = document.getElementById("scrollTopBtn");

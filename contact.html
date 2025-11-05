@@ -25,20 +25,25 @@
       <span></span>
     </div>
 
-    <div class="hero-header">
+    <main class="hero-header">
       <div class="wrapper">
         <header>
-          <div class="logo">
+          <a href="/index.html" class="logo" aria-label="Elethuswrld Home">
             <i class="fa-solid fa-e"></i>
             <div class="logo-text">Elethuswrld</div>
-          </div>
-          <nav>
-            <div class="togglebtn">
+          </a>
+          <nav role="navigation">
+            <button
+              class="togglebtn"
+              aria-expanded="false"
+              aria-controls="nav-links-menu"
+              aria-label="Toggle navigation menu"
+            >
               <span></span>
               <span></span>
               <span></span>
-            </div>
-            <ul class="navlinks">
+            </button>
+            <ul class="navlinks" id="nav-links-menu">
               <li><a href="/index.html">Home</a></li>
               <li><a href="/about.html">About</a></li>
               <li><a href="/skills.html">Skills</a></li>
@@ -47,237 +52,152 @@
             </ul>
           </nav>
         </header>
-      </div>
-    </div>
-
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
-      <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <section class="contact-hero">
-      <h1>Get In Touch</h1>
-      <p>
-        I'm open to new opportunities and collaborations. Whether you have a
-        project, want to discuss development, or just say hi, I'd love to
-        connect!
-      </p>
-    </section>
-
-    <div class="contact-container">
-      <div class="contact-info">
-        <h2>Let's Connect</h2>
-
-        <div class="contact-item" data-copy-value="elethuelza03@gmail.com">
-          <i class="fas fa-envelope"></i>
-          <div class="contact-details">
-            <h4>Email (Click to Copy)</h4>
-            <p>elethuelza03@gmail.com</p>
-          </div>
-          <div class="copy-notification">Copied!</div>
-        </div>
-
-        <div class="contact-item" data-copy-value="+27 (79) 363 2228">
-          <i class="fas fa-phone"></i>
-          <div class="contact-details">
-            <h4>Phone (Click to Copy)</h4>
-            <p>+27 (79) 363 2228</p>
-          </div>
-          <div class="copy-notification">Copied!</div>
-        </div>
-
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <div class="contact-details">
-            <h4>Location</h4>
-            <p>Cape Town, South Africa</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <i class="fas fa-clock"></i>
-          <div class="contact-details">
-            <h4>Response Time</h4>
-            <p>Usually within 24 hours</p>
-          </div>
-        </div>
-
-        <div class="social-links">
-          <a
-            href="https://www.facebook.com/profile.php?id=61575782769895"
-            target="_blank"
-            aria-label="Facebook"
-          >
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/elethu-cotyi-b48409237/"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/elethu_cotyi/"
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://github.com/Elethuswrld"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="contact-form">
-        <h2>Send Message</h2>
-
-        <div id="formMessage" class="form-message"></div>
-
-        <form
-          id="contactForm"
-          action="https://formspree.io/f/mzzjqajo"
-          method="POST"
-        >
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              aria-required="true"
-              autocomplete="name"
-            />
+        <section class="contact-page-section">
+          <div class="contact-header">
+            <h1>Get In Touch</h1>
+            <p>
+              I'm open to new opportunities and collaborations. Whether you have
+              a project, want to discuss development, or just say hi, I'd love
+              to connect!
+            </p>
           </div>
 
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              aria-required="true"
-              autocomplete="email"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="subject">Subject *</label>
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              required
-              aria-required="true"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Tell me about your project, ideas, or just say hello!"
-              required
-              aria-required="true"
-            ></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">
-            <span>Send Message</span>
-            <i class="fas fa-paper-plane" style="margin-left: 0.5rem"></i>
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <section class="recommendations" id="review-section">
-      <div class="wrapper">
-        <h2>Leave a Review</h2>
-        <p style="max-width: 700px; margin: 0 auto 2rem auto;">
-          If we've worked together or you've reviewed my work, I'd love to hear
-          your feedback. Please leave a review below!
-        </p>
-
-        <div id="reviewFormMessage" class="form-message"></div>
-
-        <form
-          id="reviewForm"
-          action="https://formspree.io/f/mzzjqajo"
-          method="POST"
-          class="review-form"
-        >
-          <div class="review-form-grid">
-            <div class="form-group">
-              <label for="review-name">Your Name *</label>
-              <input
-                type="text"
-                id="review-name"
-                name="name"
-                required
-                autocomplete="name"
-              />
+          <div class="contact-content-grid">
+            <!-- Left Side: Contact Form -->
+            <div class="contact-form-container">
+              <h2>Send a Message</h2>
+              <div id="formMessage" class="form-message"></div>
+              <form
+                id="contactForm"
+                action="https://formspree.io/f/mzzjqajo"
+                method="POST"
+              >
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject *</label>
+                  <input type="text" id="subject" name="subject" required />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="review-role">Your Role / Company</label>
-              <input type="text" id="review-role" name="role" />
+
+            <!-- Right Side: Contact Info -->
+            <div class="contact-info-container">
+              <h2>Contact Info</h2>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p>elethuelza03@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+27 (79) 363 2228</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Location</h4>
+                  <p>Cape Town, South Africa</p>
+                </div>
+              </div>
+
+              <h2 style="margin-top: 40px">Follow Me</h2>
+              <div class="social-links">
+                <a
+                  href="https://www.linkedin.com/in/elethu-cotyi-b48409237/"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://github.com/Elethuswrld"
+                  target="_blank"
+                  aria-label="GitHub"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/elethu_cotyi/"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61575782769895"
+                  target="_blank"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </div>
             </div>
           </div>
 
-          <div class="form-group">
-            <label>Your Rating *</label>
-            <div class="star-rating">
-              <input type="radio" id="star5" name="rating" value="5" required /><label
-                for="star5"
-                title="5 stars"
-              ></label>
-              <input type="radio" id="star4" name="rating" value="4" /><label
-                for="star4"
-                title="4 stars"
-              ></label>
-              <input type="radio" id="star3" name="rating" value="3" /><label
-                for="star3"
-                title="3 stars"
-              ></label>
-              <input type="radio" id="star2" name="rating" value="2" /><label
-                for="star2"
-                title="2 stars"
-              ></label>
-              <input type="radio" id="star1" name="rating" value="1" /><label
-                for="star1"
-                title="1 star"
-              ></label>
-            </div>
+          <!-- Review Section -->
+          <div class="review-section">
+            <h2>Leave a Review</h2>
+            <p>
+              If we've worked together, I'd love to hear your feedback.
+            </p>
+            <div id="reviewFormMessage" class="form-message"></div>
+            <form
+              id="reviewForm"
+              action="https://formspree.io/f/mzzjqajo"
+              method="POST"
+              class="review-form"
+            >
+              <div class="review-form-grid">
+                <div class="form-group">
+                  <label for="review-name">Your Name *</label>
+                  <input type="text" id="review-name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="review-role">Your Role / Company</label>
+                  <input type="text" id="review-role" name="role" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Your Rating *</label>
+                <div class="star-rating">
+                  <input type="radio" id="star5" name="rating" value="5" required /><label for="star5"></label>
+                  <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                  <input type="radio" id="star3" name="rating" value="3" /><label for="star3" ></label>
+                  <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                  <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="review-message">Review *</label>
+                <textarea id="review-message" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
           </div>
-
-          <div class="form-group">
-            <label for="review-message">Review *</label>
-            <textarea
-              id="review-message"
-              name="message"
-              rows="5"
-              placeholder="What was your experience like?"
-              required
-            ></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">
-            <span>Submit Review</span>
-            <i class="fas fa-check" style="margin-left: 0.5rem"></i>
-          </button>
-        </form>
+        </section>
       </div>
-    </section>
+    </main>
 
     <footer class="site-footer">
       <div class="footer-content">
-        <p>© 2025 Elethuswrld. All rights reserved.</p>
+        <p>© 2024 Elethuswrld. All rights reserved.</p>
         <div class="footer-icons">
           <a
             href="https://www.facebook.com/profile.php?id=61575782769895"
@@ -312,365 +232,72 @@
     </footer>
 
     <style>
-      /* General Styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-        text-decoration: none;
+      .contact-page-section {
+        padding: 60px 0;
       }
-
-      body {
-        background: #f9fafb;
-        color: #333;
-        padding-top: 80px;
-        scroll-behavior: smooth;
-        transition: all 0.3s ease;
-        overflow-x: hidden;
-        line-height: 1.6;
-      }
-
-      /* Dark Mode Toggle */
-      #darkModeToggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: #007ced;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 1.2rem;
-        transition: all 0.3s ease;
-        z-index: 1002;
-        box-shadow: 0 4px 15px rgba(0, 124, 237, 0.3);
-      }
-
-      #darkModeToggle:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(0, 124, 237, 0.4);
-      }
-
-      /* Loading Animation */
-      .loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10000;
-        transition: opacity 0.5s ease, visibility 0.5s ease;
-      }
-
-      .loading.fade-out {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .loading span {
-        width: 12px;
-        height: 12px;
-        margin: 0 5px;
-        background: #007ced;
-        border-radius: 50%;
-        animation: bounce 1.4s infinite ease-in-out both;
-      }
-
-      .loading span:nth-child(1) {
-        animation-delay: -0.32s;
-      }
-      .loading span:nth-child(2) {
-        animation-delay: -0.16s;
-      }
-      .loading span:nth-child(3) {
-        animation-delay: 0s;
-      }
-      .loading span:nth-child(4) {
-        animation-delay: 0.16s;
-      }
-      .loading span:nth-child(5) {
-        animation-delay: 0.32s;
-      }
-
-      @keyframes bounce {
-        0%,
-        80%,
-        100% {
-          transform: scale(0);
-        }
-        40% {
-          transform: scale(1);
-        }
-      }
-
-      /* Navbar Styles */
-      .hero-header {
-        width: 100%;
-        background: white;
-        transition: all 0.3s ease;
-      }
-
-      .wrapper {
-        max-width: 95%;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      header {
-        padding: 40px 0 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      header.scrolled {
-        background: rgba(255, 255, 255, 1);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #333;
-      }
-
-      .logo i {
-        width: 45px;
-        height: 45px;
-        background-color: #007ced;
-        color: #fff;
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-      }
-
-      .logo i:hover {
-        transform: scale(1.1);
-        box-shadow: 0 4px 15px rgba(0, 124, 237, 0.3);
-      }
-
-      .logo-text {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #333;
-        transition: color 0.3s ease;
-      }
-
-      nav {
-        position: relative;
-      }
-
-      .togglebtn {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        padding: 10px;
-      }
-
-      .togglebtn span {
-        width: 25px;
-        height: 3px;
-        background: #333;
-        margin: 3px 0;
-        transition: all 0.3s ease;
-        border-radius: 2px;
-      }
-
-      .togglebtn.click span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-      }
-
-      .togglebtn.click span:nth-child(2) {
-        opacity: 0;
-      }
-
-      .togglebtn.click span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-      }
-
-      .navlinks {
-        list-style: none;
-        display: flex;
-        gap: 30px;
-      }
-
-      .navlinks li a {
-        color: #333;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        position: relative;
-        padding: 5px 0;
-      }
-
-      .navlinks li a::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #007ced;
-        transition: width 0.3s ease;
-      }
-
-      .navlinks li a:hover,
-      .navlinks li a.active {
-        color: #007ced;
-      }
-
-      .navlinks li a:hover::after,
-      .navlinks li a.active::after {
-        width: 100%;
-      }
-
-      /* Contact Hero Section */
-      .contact-hero {
-        background: #007ced;
-        padding: 5rem 2rem 3rem;
+      .contact-header {
         text-align: center;
-        color: #fff;
-        position: relative;
-        overflow: hidden;
+        margin-bottom: 60px;
       }
-
-      .contact-hero h1 {
+      .contact-header h1 {
         font-size: 2.5rem;
+        color: #333;
         margin-bottom: 1rem;
-        font-weight: 600;
       }
-
-      .contact-hero p {
+      .contact-header p {
         font-size: 1rem;
         max-width: 600px;
         margin: 0 auto;
-        line-height: 1.6;
+        color: #666;
       }
-
-      .contact-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem 2rem;
+      .contact-content-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        align-items: start;
+        gap: 40px;
+        margin-bottom: 60px;
       }
-
-      .contact-info {
+      .contact-form-container,
+      .contact-info-container {
         background: #fff;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       }
-
-      .contact-form {
-        background: #fff;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .contact-info h2,
-      .contact-form h2 {
+      .contact-form-container h2,
+      .contact-info-container h2 {
         font-size: 1.75rem;
         margin-bottom: 1rem;
         color: #007ced;
-        font-weight: 600;
       }
-
       .contact-item {
-        /* Added cursor: pointer to indicate clickability for copy */
-        cursor: pointer;
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
-        padding: 0.5rem;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        position: relative; /* For the notification */
       }
-
-      .contact-item:hover {
-        background: rgba(0, 124, 237, 0.1);
-      }
-
       .contact-item i {
         font-size: 1.25rem;
         margin-right: 0.75rem;
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background: #007ced;
-        color: #fff;
-        flex-shrink: 0; /* Prevent icon from shrinking */
+        color: #007ced;
       }
-
-      .contact-details h4 {
+      .contact-item h4 {
         font-size: 1rem;
         margin-bottom: 0.2rem;
         color: #333;
       }
-
-      .contact-details p {
+      .contact-item p {
         color: #4b5563;
         font-size: 0.9rem;
         margin: 0;
-        word-break: break-all; /* Ensure long email/phone doesn't overflow */
       }
-
-      /* Click to copy notification */
-      .copy-notification {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        background: #22c55e;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 0.8rem;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none; /* Allows clicks to pass through */
-      }
-
-      .copy-notification.show {
-        opacity: 1;
-      }
-
       .form-group {
         margin-bottom: 1rem;
       }
-
       .form-group label {
         display: block;
         margin-bottom: 0.5rem;
         font-weight: 500;
         color: #333;
       }
-
       .form-group input,
       .form-group textarea {
         width: 100%;
@@ -680,53 +307,36 @@
         font-size: 0.9rem;
         transition: all 0.3s ease;
       }
-
       .form-group input:focus,
       .form-group textarea:focus {
         outline: none;
         border-color: #007ced;
         box-shadow: 0 0 0 2px rgba(0, 124, 237, 0.2);
       }
-
       .form-group textarea {
         resize: vertical;
         min-height: 100px;
       }
-
       .submit-btn {
         background: #007ced;
         color: #fff;
         border: none;
         padding: 0.75rem 1.5rem;
-        border-radius: 20px;
+        border-radius: 8px;
         font-size: 0.9rem;
         font-weight: 500;
         cursor: pointer;
         transition: all 0.3s ease;
         width: 100%;
-        display: flex; /* Added for icon/text alignment */
-        justify-content: center; /* Added for icon/text alignment */
-        align-items: center; /* Added for icon/text alignment */
       }
-
       .submit-btn:hover {
         background: #005bb5;
-        transform: translateY(-1px);
       }
-
-      .submit-btn:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-        transform: none;
-      }
-
       .social-links {
         display: flex;
         gap: 0.75rem;
         margin-top: 1.5rem;
-        justify-content: center;
       }
-
       .social-links a {
         display: flex;
         align-items: center;
@@ -734,21 +344,31 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background: #007ced;
-        color: #fff;
+        background: #f4f8ff;
+        color: #007ced;
         transition: all 0.3s ease;
       }
-
       .social-links a:hover {
-        background: #005bb5;
+        background: #007ced;
+        color: #fff;
         transform: scale(1.1);
       }
-
       .social-links a i {
         font-size: 1rem;
       }
-
-      /* Recommendations Section */
+      .review-section {
+        margin-top: 60px;
+        text-align: center;
+      }
+      .review-section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        color: #007ced;
+      }
+      .review-section p {
+        color: #666;
+        margin-bottom: 2rem;
+      }
       .review-form {
         max-width: 800px;
         margin: 0 auto;
@@ -756,182 +376,36 @@
         padding: 2rem;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: left;
       }
-
       .review-form-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
       }
-
-      /* Star Rating */
-
-      .recommendations {
-        background: #ffffff;
-        padding: 3rem 2rem;
-      }
-
-      .recommendations .wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .recommendations h2 {
-        text-align: center;
-        font-size: 1.75rem;
-        margin-bottom: 2rem;
-        color: #007ced;
-        font-weight: 600;
-      }
-
       .star-rating {
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
         gap: 5px;
       }
-
       .star-rating input {
         display: none;
       }
-
       .star-rating label {
         font-size: 2rem;
         color: #ddd;
         cursor: pointer;
         transition: color 0.2s;
       }
-
       .star-rating label::before {
         content: "★";
       }
-
       .star-rating input:checked ~ label,
       .star-rating label:hover,
       .star-rating label:hover ~ label {
         color: #f59e0b;
       }
-
-      .dark-mode .review-form {
-        background: #1f2937;
-        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-      }
-
-      .dark-mode .star-rating label {
-        color: #4a5568;
-      }
-
-      .dark-mode .star-rating input:checked ~ label,
-      .dark-mode .star-rating label:hover,
-      .dark-mode .star-rating label:hover ~ label {
-        color: #f59e0b;
-      }
-
-      /* End Star Rating */
-
-      .recommendations-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .recommendation-card {
-        background: #fff;
-        padding: 1.5rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      .recommendation-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      }
-
-      .recommendation-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.75rem;
-      }
-
-      .recommendation-avatar {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: #007ced;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-right: 0.75rem;
-        flex-shrink: 0;
-      }
-
-      .recommendation-info h4 {
-        margin: 0;
-        color: #333;
-        font-size: 1rem;
-        font-weight: 600;
-      }
-
-      .recommendation-info p {
-        margin: 0;
-        color: #4b5563;
-        font-size: 0.85rem;
-      }
-
-      .recommendation-text {
-        color: #4b5563;
-        line-height: 1.5;
-        font-size: 0.9rem;
-      }
-
-      .stars {
-        color: #f59e0b;
-        margin-top: 0.75rem;
-        font-size: 1rem;
-      }
-
-      /* Scroll to Top Button */
-      .scroll-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        background: #007ced;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 999;
-      }
-
-      .scroll-to-top.visible {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      .scroll-to-top:hover {
-        background: #005bb5;
-        transform: translateY(-2px);
-      }
-
-      .scroll-to-top i {
-        color: #fff;
-        font-size: 1rem;
-      }
-
       /* Form Message */
       .form-message {
         padding: 0.75rem;
@@ -962,132 +436,159 @@
         background: #ef4444;
         color: #fff;
       }
-
-      /* Footer Styles */
-      .site-footer {
-        background: linear-gradient(-45deg, #000000, #1a1a1a, #2c2c2c, #111111);
-        background-size: 400% 400%;
-        animation: galaxyShift 12s ease infinite;
-        padding: 40px 20px;
-        text-align: center;
-        position: relative;
-        box-shadow: 0 -5px 25px rgba(0, 124, 255, 0.1);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      @keyframes galaxyShift {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      .footer-content p {
-        margin-bottom: 20px;
-        font-size: 14px;
-        color: #ccc;
-      }
-
-      .footer-icons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-      }
-
-      .footer-icons a {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #bbb;
-        font-size: 18px;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .footer-icons a::before {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0%;
-        height: 2px;
-        background: linear-gradient(90deg, #4facfe, #00f2fe);
-        transition: width 0.4s ease;
-        border-radius: 1px;
-      }
-
-      .footer-icons a:hover::before {
-        width: 80%;
-      }
-
-      .footer-icons a:hover {
-        color: #00f2fe;
-        transform: translateY(-3px) scale(1.1);
-        background: rgba(79, 172, 254, 0.1);
-      }
-
       /* Dark Mode Styles */
-      .dark-mode {
-        background: #111;
-        color: #ddd;
+      body.dark-mode .contact-header h1 {
+        color: #f0f0f0;
       }
-
-      .dark-mode .hero-header {
-        background: #111;
+      body.dark-mode .contact-header p {
+        color: #aaa;
       }
-
-      .dark-mode header {
-        background: rgba(17, 17, 17, 0.98);
-        border-bottom: 1px solid #374151;
+      body.dark-mode .contact-form-container,
+      body.dark-mode .contact-info-container,
+      body.dark-mode .review-form {
+        background: #2a2a2a;
+        border-color: #444;
       }
-
-      .dark-mode header.scrolled {
-        background: rgba(17, 17, 17, 1);
-        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+      body.dark-mode .contact-form-container h2,
+      body.dark-mode .contact-info-container h2,
+      body.dark-mode .review-section h2 {
+        color: #00a8ff;
       }
-
-      .dark-mode .logo-text {
-        color: #ddd;
+      body.dark-mode .contact-item h4 {
+        color: #f0f0f0;
       }
-
-      .dark-mode .togglebtn span {
-        background: #ddd;
+      body.dark-mode .contact-item p,
+      body.dark-mode .review-section p {
+        color: #aaa;
       }
-
-      .dark-mode .navlinks li a {
-        color: #ddd;
+      body.dark-mode .form-group label {
+        color: #f0f0f0;
       }
-
-      .dark-mode .navlinks {
-        background: #111;
-        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+      body.dark-mode .form-group input,
+      body.dark-mode .form-group textarea {
+        background: #333;
+        border-color: #555;
+        color: #f0f0f0;
       }
-
-      .dark-mode .contact-hero {
-        background: #005bb5;
+      body.dark-mode .social-links a {
+        background: #333;
+        color: #00a8ff;
       }
-
-      .dark-mode .contact-hero h1 {
-        color: #ddd;
+      body.dark-mode .social-links a:hover {
+        background: #00a8ff;
+        color: #fff;
       }
-
-      .dark-mode .contact-hero p {
-        color: #ccc;
+      body.dark-mode .star-rating label {
+        color: #4a5568;
       }
+      body.dark-mode .star-rating input:checked ~ label,
+      body.dark-mode .star-rating label:hover,
+      body.dark-mode .star-rating label:hover ~ label {
+        color: #f59e0b;
+      }
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .contact-content-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .review-form-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Common Functionality ---
+        const darkModeToggle = document.getElementById("darkModeToggle");
+        if (darkModeToggle) {
+          const currentMode = localStorage.getItem("mode") || "light";
+          if (currentMode === "dark") {
+            document.body.classList.add("dark-mode");
+            darkModeToggle.textContent = "☀️";
+          }
+          darkModeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            const newMode = document.body.classList.contains("dark-mode")
+              ? "dark"
+              : "light";
+            localStorage.setItem("mode", newMode);
+            darkModeToggle.textContent = newMode === "dark" ? "☀️" : "🌙";
+          });
+        }
+        const toggleBtn = document.querySelector(".togglebtn");
+        const navLinks = document.querySelector(".navlinks");
+        if (toggleBtn && navLinks) {
+          toggleBtn.addEventListener("click", () => {
+            const isExpanded = navLinks.classList.toggle("open");
+            toggleBtn.setAttribute("aria-expanded", isExpanded);
+            toggleBtn.classList.toggle("click", isExpanded);
+          });
+        }
+        const loading = document.querySelector(".loading");
+        if (loading) {
+          setTimeout(() => {
+            loading.classList.add("hidden");
+          }, 500);
+        }
 
-      .dark-mode .contact-info,
-      .dark-mode .contact-form {
+        // --- Page-Specific Functionality ---
+        const contactForm = document.getElementById("contactForm");
+        const reviewForm = document.getElementById("reviewForm");
+
+        const handleFormSubmit = async (form, messageEl) => {
+          const formURL = form.getAttribute("action");
+          const submitBtn = form.querySelector(".submit-btn");
+          const originalText = submitBtn.innerHTML;
+
+          submitBtn.innerHTML = "Sending...";
+          submitBtn.disabled = true;
+          messageEl.classList.remove("show", "success", "error");
+
+          try {
+            const response = await fetch(formURL, {
+              method: "POST",
+              body: new FormData(form),
+              headers: { Accept: "application/json" },
+            });
+
+            if (response.ok) {
+              messageEl.textContent = "Thank you! Your message has been sent.";
+              messageEl.className = "form-message show success";
+              form.reset();
+            } else {
+              throw new Error("Form submission failed");
+            }
+          } catch (error) {
+            messageEl.textContent = "Oops! There was an issue. Please try again.";
+            messageEl.className = "form-message show error";
+          } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          }
+        };
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            handleFormSubmit(contactForm, document.getElementById("formMessage"));
+          });
+        }
+
+        if (reviewForm) {
+          reviewForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            handleFormSubmit(
+              reviewForm,
+              document.getElementById("reviewFormMessage")
+            );
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
         background: #1f2937;
         box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
       }

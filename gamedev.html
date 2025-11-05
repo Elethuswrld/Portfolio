@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Development - Elethuswrld</title>
+    <title>Game Dev - Elethu's Portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -24,20 +25,25 @@
       <span></span>
     </div>
 
-    <div class="hero-header">
+    <main class="hero-header">
       <div class="wrapper">
         <header>
-          <div class="logo">
+          <a href="/index.html" class="logo" aria-label="Elethuswrld Home">
             <i class="fa-solid fa-e"></i>
             <div class="logo-text">Elethuswrld</div>
-          </div>
-          <nav>
-            <div class="togglebtn">
+          </a>
+          <nav role="navigation">
+            <button
+              class="togglebtn"
+              aria-expanded="false"
+              aria-controls="nav-links-menu"
+              aria-label="Toggle navigation menu"
+            >
               <span></span>
               <span></span>
               <span></span>
-            </div>
-            <ul class="navlinks">
+            </button>
+            <ul class="navlinks" id="nav-links-menu">
               <li><a href="/index.html">Home</a></li>
               <li><a href="/about.html">About</a></li>
               <li><a href="/skills.html">Skills</a></li>
@@ -46,555 +52,135 @@
             </ul>
           </nav>
         </header>
-      </div>
-    </div>
 
-    <section id="home" class="hero">
-      <div class="particles">
-        <div class="particle" style="left: 10%; animation-delay: 0s"></div>
-        <div class="particle" style="left: 20%; animation-delay: 1s"></div>
-        <div class="particle" style="left: 30%; animation-delay: 2s"></div>
-        <div class="particle" style="left: 40%; animation-delay: 0.5s"></div>
-        <div class="particle" style="left: 50%; animation-delay: 1.5s"></div>
-        <div class="particle" style="left: 60%; animation-delay: 3s"></div>
-        <div class="particle" style="left: 70%; animation-delay: 2.5s"></div>
-        <div class="particle" style="left: 80%; animation-delay: 1.2s"></div>
-        <div class="particle" style="left: 90%; animation-delay: 0.8s"></div>
-      </div>
-      <div class="hero-content">
-        <h1 class="hero-title">GAME DEV</h1>
-        <p class="hero-subtitle">// Building immersive gaming experiences</p>
-        <a href="#projects" class="cta-button">
-          <i class="fas fa-play"></i>
-          Explore Games
-        </a>
-      </div>
-    </section>
-
-    <section id="passion" class="passion">
-      <div class="section-header fade-in">
-        <h2 class="section-title">My Passion for Gaming</h2>
-        <p class="section-subtitle">// From player to creator</p>
-      </div>
-      <div class="passion-content">
-        <p>
-          Gaming has been my passion since childhood. What started as hours
-          spent exploring virtual worlds has evolved into a drive to create
-          them. I love crafting experiences that challenge players, tell
-          compelling stories, and push the boundaries of technology. Whether
-          it's designing intricate puzzles or building immersive VR
-          environments, my goal is to create games that leave a lasting impact
-          and bring joy to players around the world.
-        </p>
-      </div>
-    </section>
-
-    <section id="projects" class="projects">
-      <div class="section-header fade-in">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">
-          // Interactive experiences built with passion
-        </p>
-      </div>
-
-      <div class="category-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="Unity">Unity</button>
-        <button class="filter-btn" data-filter="Unreal Engine">
-          Unreal Engine
-        </button>
-        <button class="filter-btn" data-filter="Godot Engine">
-          Godot Engine
-        </button>
-        <button class="filter-btn" data-filter="GameMaker">GameMaker</button>
-        <button class="filter-btn" data-filter="GDevelop">GDevelop</button>
-        <button class="filter-btn" data-filter="Construct 3">
-          Construct 3
-        </button>
-        <button class="filter-btn" data-filter="HTML/CSS/JS">
-          HTML/CSS/JS (Web Games)
-        </button>
-        <button class="filter-btn" data-filter="Other">Other</button>
-      </div>
-
-      <div class="projects-grid">
-        <div class="project-card fade-in" data-category="Unity">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-cube"></i>
+        <section class="gamedev-section">
+          <div class="gamedev-hero">
+            <div class="gamedev-hero-text">
+              <h1>Game Development</h1>
+              <p>
+                From player to creator. This is a showcase of my journey into
+                building immersive worlds and interactive experiences.
+              </p>
             </div>
-            <div class="project-status status-progress">IN PROGRESS</div>
-          </div>
-          <h3 class="project-title">Unity Project Placeholder</h3>
-          <p class="project-description">
-            A placeholder for an upcoming Unity-based game project. Stay tuned
-            for an exciting experience featuring advanced gameplay mechanics and
-            immersive visuals.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">Unity</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">TBD</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-btn btn-primary">
-              <i class="fas fa-eye"></i>
-              Preview
-            </a>
-            <a href="#" class="project-btn btn-secondary">
-              <i class="fas fa-code"></i>
-              Details
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card fade-in" data-category="Unreal Engine">
-          <div class="project-header">
-            <div class="project-icon">
+            <div class="gamedev-hero-icon">
               <i class="fas fa-gamepad"></i>
             </div>
-            <div class="project-status status-progress">IN PROGRESS</div>
           </div>
-          <h3 class="project-title">Unreal Engine Project Placeholder</h3>
-          <p class="project-description">
-            A placeholder for an upcoming Unreal Engine project. Expect
-            high-fidelity graphics and complex gameplay systems in this upcoming
-            title.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">Unreal Engine</span>
-            <span class="tech-tag">C++</span>
-            <span class="tech-tag">Blueprints</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-btn btn-primary">
-              <i class="fas fa-eye"></i>
-              Preview
-            </a>
-            <a href="#" class="project-btn btn-secondary">
-              <i class="fas fa-code"></i>
-              Details
-            </a>
-          </div>
-        </div>
 
-        <div class="project-card fade-in" data-category="Godot Engine">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-leaf"></i>
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card" data-category="Unity">
+              <div class="project-image-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Unity+Project"
+                  alt="Unity Project Placeholder"
+                />
+                <div class="project-status">In Progress</div>
+              </div>
+              <div class="project-content">
+                <h3>Unity Project Placeholder</h3>
+                <p>
+                  An exciting experience featuring advanced gameplay mechanics
+                  and immersive visuals.
+                </p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Unity</span>
+                  <span class="tech-tag">C#</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-btn">Preview</a>
+                  <a href="#" class="project-btn secondary">Details</a>
+                </div>
+              </div>
             </div>
-            <div class="project-status status-progress">IN PROGRESS</div>
-          </div>
-          <h3 class="project-title">Godot Engine Project Placeholder</h3>
-          <p class="project-description">
-            A placeholder for an upcoming Godot Engine project. This lightweight
-            and open-source engine will power a unique gaming experience.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">Godot Engine</span>
-            <span class="tech-tag">GDScript</span>
-            <span class="tech-tag">TBD</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-btn btn-primary">
-              <i class="fas fa-eye"></i>
-              Preview
-            </a>
-            <a href="#" class="project-btn btn-secondary">
-              <i class="fas fa-code"></i>
-              Details
-            </a>
-          </div>
-        </div>
 
-        <div class="project-card fade-in" data-category="GameMaker">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-puzzle-piece"></i>
+            <!-- Project 2 -->
+            <div class="project-card" data-category="Unreal Engine">
+              <div class="project-image-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Unreal+Project"
+                  alt="Unreal Engine Project Placeholder"
+                />
+                <div class="project-status">In Progress</div>
+              </div>
+              <div class="project-content">
+                <h3>Unreal Engine Project Placeholder</h3>
+                <p>
+                  Expect high-fidelity graphics and complex gameplay systems in
+                  this upcoming title.
+                </p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Unreal Engine</span>
+                  <span class="tech-tag">C++</span>
+                  <span class="tech-tag">Blueprints</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-btn">Preview</a>
+                  <a href="#" class="project-btn secondary">Details</a>
+                </div>
+              </div>
             </div>
-            <div class="project-status status-progress">IN PROGRESS</div>
-          </div>
-          <h3 class="project-title">GameMaker Project Placeholder</h3>
-          <p class="project-description">
-            A placeholder for an upcoming GameMaker project. Ideal for 2D games,
-            this project will feature engaging gameplay and creative design.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">GameMaker</span>
-            <span class="tech-tag">GML</span>
-            <span class="tech-tag">TBD</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-btn btn-primary">
-              <i class="fas fa-eye"></i>
-              Preview
-            </a>
-            <a href="#" class="project-btn btn-secondary">
-              <i class="fas fa-code"></i>
-              Details
-            </a>
-          </div>
-        </div>
 
-        <div class="project-card fade-in" data-category="GDevelop">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-bolt"></i>
+            <!-- Project 3 -->
+            <div class="project-card" data-category="Godot Engine">
+              <div class="project-image-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Godot+Project"
+                  alt="Godot Engine Project Placeholder"
+                />
+                <div class="project-status">In Progress</div>
+              </div>
+              <div class="project-content">
+                <h3>Godot Engine Project Placeholder</h3>
+                <p>
+                  This lightweight and open-source engine will power a unique
+                  gaming experience.
+                </p>
+                <div class="tech-stack">
+                  <span class="tech-tag">Godot Engine</span>
+                  <span class="tech-tag">GDScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-btn">Preview</a>
+                  <a href="#" class="project-btn secondary">Details</a>
+                </div>
+              </div>
             </div>
-            <div class="project-status status-progress">IN PROGRESS</div>
-          </div>
-          <h3 class="project-title">GDevelop Project Placeholder</h3>
-          <p class="project-description">
-            A placeholder for an upcoming GDevelop project. This no-code
-            platform will enable rapid development of an accessible and fun
-            game.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">GDevelop</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">TBD</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-btn btn-primary">
-              <i class="fas fa-eye"></i>
-              Preview
-            </a>
-            <a href="#" class="project-btn btn-secondary">
-              <i class="fas fa-code"></i>
-              Details
-            </a>
-          </div>
-        </div>
 
-        <div class="project-card fade-in" data-category="Construct 3">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-tools"></i>
+            <!-- Project 4 -->
+            <div class="project-card" data-category="HTML/CSS/JS">
+              <div class="project-image-container">
+                <img
+                  src="https://via.placeholder.com/400x250?text=Web+Game"
+                  alt="Web Game Project Placeholder"
+                />
+                <div class="project-status">Completed</div>
+              </div>
+              <div class="project-content">
+                <h3>Web Game Project Placeholder</h3>
+                <p>
+                  A browser-friendly game built with HTML, CSS, and JavaScript,
+                  featuring seamless performance.
+                </p>
+                <div class="tech-stack">
+                  <span class="tech-tag">HTML</span>
+                  <span class="tech-tag">CSS</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-btn">Play Now</a>
+                  <a href="#" class="project-btn secondary">Details</a>
+                </div>
+              </div>
             </div>
-            <div class="project-status status-progress">IN PROGRESS</div>
           </div>
-          <h3 class="project-title">Construct 3 Project Placeholder</h3>
-          <p class="project-description">
-            A placeholder for an upcoming Construct 3 project. Perfect for quick
-            prototyping, this game will feature intuitive gameplay and vibrant
-            visuals.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">Construct 3</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">TBD</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-btn btn-primary">
-              <i class="fas fa-eye"></i>
-              Preview
-            </a>
-            <a href="#" class="project-btn btn-secondary">
-              <i class="fas fa-code"></i>
-              Details
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card fade-in" data-category="HTML/CSS/JS">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <div class="project-status status-progress">IN PROGRESS</div>
-          </div>
-          <h3 class="project-title">Web Game Project Placeholder</h3>
-          <p class="project-description">
-            A placeholder for an upcoming web-based game using HTML, CSS, and
-            JavaScript. Expect a browser-friendly game with seamless
-            performance.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">HTML/CSS/JS</span>
-            <span class="tech-tag">Canvas</span>
-            <span class="tech-tag">TBD</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-btn btn-primary">
-              <i class="fas fa-eye"></i>
-              Preview
-            </a>
-            <a href="#" class="project-btn btn-secondary">
-              <i class="fas fa-code"></i>
-              Details
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card fade-in" data-category="Other">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <div class="project-status status-progress">IN PROGRESS</div>
-          </div>
-          <h3 class="project-title">Other Project Placeholder</h3>
-          <p class="project-description">
-            A placeholder for an upcoming project using a unique or experimental
-            platform. Stay tuned for something innovative and unexpected!
-          </p>
-          <div class="tech-stack">
-            <span class="tech-tag">TBD</span>
-            <span class="tech-tag">TBD</span>
-            <span class="tech-tag">TBD</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="project-btn btn-primary">
-              <i class="fas fa-eye"></i>
-              Preview
-            </a>
-            <a href="#" class="project-btn btn-secondary">
-              <i class="fas fa-code"></i>
-              Details
-            </a>
-          </div>
-        </div>
+        </section>
       </div>
-    </section>
-
-    <section id="skills" class="skills">
-      <div class="skills-container">
-        <div class="section-header fade-in">
-          <h2 class="section-title">Technical Arsenal</h2>
-          <p class="section-subtitle">
-            // Tools and technologies I use to craft games
-          </p>
-        </div>
-
-        <div class="skills-grid">
-          <div class="skill-card fade-in">
-            <div class="skill-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3 class="skill-title">Programming</h3>
-            <ul class="skill-list">
-              <li>C# & Unity Engine</li>
-              <li>C++ & Unreal Engine</li>
-              <li>JavaScript & Web Games</li>
-              <li>Python & Game Tools</li>
-              <li>Shader Programming</li>
-            </ul>
-          </div>
-
-          <div class="skill-card fade-in">
-            <div class="skill-icon">
-              <i class="fas fa-paint-brush"></i>
-            </div>
-            <h3 class="skill-title">Game Design</h3>
-            <ul class="skill-list">
-              <li>Gameplay Mechanics</li>
-              <li>Level Design</li>
-              <li>UI/UX for Games</li>
-              <li>Player Psychology</li>
-              <li>Rapid Prototyping</li>
-            </ul>
-          </div>
-
-          <div class="skill-card fade-in">
-            <div class="skill-icon">
-              <i class="fas fa-cube"></i>
-            </div>
-            <h3 class="skill-title">3D & Graphics</h3>
-            <ul class="skill-list">
-              <li>Blender & 3D Modeling</li>
-              <li>Texture Creation</li>
-              <li>Animation Systems</li>
-              <li>Lighting & Rendering</li>
-              <li>Particle Effects</li>
-            </ul>
-          </div>
-
-          <div class="skill-card fade-in">
-            <div class="skill-icon">
-              <i class="fas fa-gamepad"></i>
-            </div>
-            <h3 class="skill-title">Specializations</h3>
-            <ul class="skill-list">
-              <li>VR/AR Development</li>
-              <li>Mobile Optimization</li>
-              <li>Multiplayer Systems</li>
-              <li>AI & Procedural Gen</li>
-              <li>Performance Optimization</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="certificates" class="certificates">
-      <div class="section-header fade-in">
-        <h2 class="section-title">Certificates</h2>
-        <p class="section-subtitle">
-          // Validations of my game development expertise
-        </p>
-      </div>
-
-      <div class="certificates-grid">
-        <div
-          class="certificate-card fade-in"
-          data-certificate="unity-certified"
-        >
-          <div class="expand-indicator">
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <h4 class="certificate-title">Unity Certified Developer</h4>
-          <img
-            src="https://via.placeholder.com/300x200?text=Unity+Certificate"
-            alt="Unity Certified Developer Certificate"
-          />
-          <a
-            href="https://via.placeholder.com/300x200?text=Unity+Certificate+PDF"
-            target="_blank"
-            class="btn"
-            >View PDF</a
-          >
-          <div class="skills-section">
-            <div class="certificate-description">
-              Certified in Unity game development, covering core concepts,
-              scripting, and deployment.
-            </div>
-            <div class="skills-list">
-              <span class="skill-tag">Unity Engine</span>
-              <span class="skill-tag">C# Scripting</span>
-              <span class="skill-tag">Game Optimization</span>
-              <span class="skill-tag">Asset Management</span>
-              <span class="skill-tag">UI Systems</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="certificate-card fade-in" data-certificate="unreal-engine">
-          <div class="expand-indicator">
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <h4 class="certificate-title">Unreal Engine Game Development</h4>
-          <img
-            src="https://via.placeholder.com/300x200?text=Unreal+Engine+Certificate"
-            alt="Unreal Engine Game Development Certificate"
-          />
-          <a
-            href="https://via.placeholder.com/300x200?text=Unreal+Engine+Certificate+PDF"
-            target="_blank"
-            class="btn"
-            >View PDF</a
-          >
-          <div class="skills-section">
-            <div class="certificate-description">
-              Specialization in Unreal Engine, including Blueprints, C++, and
-              advanced rendering techniques.
-            </div>
-            <div class="skills-list">
-              <span class="skill-tag">Blueprints</span>
-              <span class="skill-tag">C++ Programming</span>
-              <span class="skill-tag">Real-Time Rendering</span>
-              <span class="skill-tag">Physics Simulation</span>
-              <span class="skill-tag">Material Editor</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="certificate-card fade-in" data-certificate="game-design">
-          <div class="expand-indicator">
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <h4 class="certificate-title">Game Design Fundamentals</h4>
-          <img
-            src="https://via.placeholder.com/300x200?text=Game+Design+Certificate"
-            alt="Game Design Fundamentals Certificate"
-          />
-          <a
-            href="https://via.placeholder.com/300x200?text=Game+Design+Certificate+PDF"
-            target="_blank"
-            class="btn"
-            >View PDF</a
-          >
-          <div class="skills-section">
-            <div class="certificate-description">
-              Course covering game mechanics, level design, and player
-              engagement strategies.
-            </div>
-            <div class="skills-list">
-              <span class="skill-tag">Game Mechanics</span>
-              <span class="skill-tag">Level Design</span>
-              <span class="skill-tag">Player Psychology</span>
-              <span class="skill-tag">Storyboarding</span>
-              <span class="skill-tag">Game Balancing</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="certificate-card fade-in" data-certificate="vr-development">
-          <div class="expand-indicator">
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <h4 class="certificate-title">VR Development Specialist</h4>
-          <img
-            src="https://via.placeholder.com/300x200?text=VR+Development+Certificate"
-            alt="VR Development Specialist Certificate"
-          />
-          <a
-            href="https://via.placeholder.com/300x200?text=VR+Development+Certificate+PDF"
-            target="_blank"
-            class="btn"
-            >View PDF</a
-          >
-          <div class="skills-section">
-            <div class="certificate-description">
-              Focused on VR/AR development using Unity and XR Toolkit.
-            </div>
-            <div class="skills-list">
-              <span class="skill-tag">VR Interactions</span>
-              <span class="skill-tag">Unity XR Toolkit</span>
-              <span class="skill-tag">Spatial Audio</span>
-              <span class="skill-tag">Motion Tracking</span>
-              <span class="skill-tag">Performance Optimization</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="contact-container">
-        <div class="section-header fade-in">
-          <h2 class="section-title">Let's Build Something Epic</h2>
-          <p class="section-subtitle">
-            // Ready to collaborate on your next gaming project?
-          </p>
-        </div>
-
-        <div class="contact-links">
-          <a href="mailto:elethuelza03@gmail.com" class="contact-link">
-            <i class="fas fa-envelope"></i>
-            Email Me
-          </a>
-          <a href="https://github.com/Elethuswrld" class="contact-link">
-            <i class="fab fa-github"></i>
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/elethu-cotyi-b48409237/"
-            class="contact-link"
-          >
-            <i class="fab fa-linkedin"></i>
-            LinkedIn
-          </a>
-          <a href="https://discord.gg/yourserver" class="contact-link">
-            <i class="fab fa-discord"></i>
-            Discord
-          </a>
-        </div>
-      </div>
-    </section>
+    </main>
 
     <footer class="site-footer">
       <div class="footer-content">
-        <p>© 2025 Elethuswrld. All rights reserved.</p>
+        <p>© 2024 Elethuswrld. All rights reserved.</p>
         <div class="footer-icons">
           <a
             href="https://www.facebook.com/profile.php?id=61575782769895"

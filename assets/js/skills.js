@@ -78,13 +78,25 @@ document.addEventListener("DOMContentLoaded", () => {
         const info = document.createElement("div");
         info.classList.add("project-info");
 
+        const titleContainer = document.createElement("div");
+        titleContainer.classList.add("project-title-container");
+
         const projTitle = document.createElement("strong");
         projTitle.textContent = proj.title;
+        titleContainer.appendChild(projTitle);
+
+        // Create and add the status badge if it exists
+        if (proj.status) {
+          const statusBadge = document.createElement("span");
+          statusBadge.classList.add("project-status-badge", proj.status.toLowerCase().replace(" ", "-"));
+          statusBadge.textContent = proj.status;
+          titleContainer.appendChild(statusBadge);
+        }
 
         const projDesc = document.createElement("p");
         projDesc.textContent = proj.desc;
 
-        info.appendChild(projTitle);
+        info.appendChild(titleContainer);
         info.appendChild(projDesc);
 
         // Create and append project tags if they exist

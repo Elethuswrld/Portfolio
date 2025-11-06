@@ -230,20 +230,52 @@
   border-bottom: 2px solid #eee;
 }
 
-.project-info strong {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #007ced;
-  margin-bottom: 5px;
-  display: block;
-}
-
 .project-info p {
   font-size: 0.95rem;
   color: #666;
   margin-bottom: 15px;
   min-height: 40px;
   flex-grow: 1;
+}
+
+.project-title-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+
+.project-info strong {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #007ced;
+  margin-bottom: 0; /* Adjusted from 5px */
+  display: block;
+}
+
+.project-status-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-status-badge.complete {
+  background-color: #d1fae5; /* Green */
+  color: #065f46;
+}
+
+.project-status-badge.in-progress {
+  background-color: #dbeafe; /* Blue */
+  color: #1e40af;
+}
+
+.project-status-badge.planning {
+  background-color: #fee2e2; /* Red */
+  color: #991b1b;
 }
 
 .project-tags-container {
@@ -377,6 +409,23 @@ body.dark-mode .project-image {
 body.dark-mode .projects-display-grid h2 {
   color: #00a8ff;
   border-bottom-color: #444;
+}
+
+body.dark-mode .project-info strong {
+  color: #60a5fa;
+}
+
+body.dark-mode .project-status-badge.complete {
+  background-color: #064e3b;
+  color: #a7f3d0;
+}
+body.dark-mode .project-status-badge.in-progress {
+  background-color: #1e3a8a;
+  color: #bfdbfe;
+}
+body.dark-mode .project-status-badge.planning {
+  background-color: #7f1d1d;
+  color: #fecaca;
 }
 
 body.dark-mode .badge-card {

@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elethu's Portfolio</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/assets/css/project-cards.css" />
+    <link rel="stylesheet" href="/assets/css/featured-projects.css" />
+
     <style>
       /* Styles for the Hero Section */
       /* Page-specific styles for Home.css */
@@ -309,112 +306,112 @@
           A selection of my recent work showcasing diverse skills, innovative solutions, and the technologies behind them.
         </p>
 
-        <div class="featured-projects-grid">
+        <div class="project-cards-grid">
           <!-- Featured Project 1: BetGen -->
-          <article class="featured-project-card">
+          <div class="project-card-item">
             <img
               src="/assets/Projects/BetGen.png"
               alt="BetGen project image"
-              class="featured-project-image"
+              class="project-image"
             />
-            <div class="featured-project-content">
-              <div class="featured-project-title-container">
-                <h3>BetGen</h3>
-                <span class="featured-project-status-badge in-progress">In Progress</span>
+            <div class="project-info">
+              <div class="project-title-container">
+                <strong>BetGen</strong>
+                <span class="project-status-badge in-progress">In Progress</span>
               </div>
-              <p class="featured-project-description">
+              <p>
                 An AI-driven web app for analyzing online game performance using real-time data analysis and personalized coaching.
               </p>
-              <div class="featured-project-tags">
-                <span class="featured-project-tag">TypeScript</span>
-                <span class="featured-project-tag">AI</span>
-                <span class="featured-project-tag">Data Analysis</span>
-                <span class="featured-project-tag">Web App</span>
+              <div class="project-tags-container">
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">AI</span>
+                <span class="project-tag">Data Analysis</span>
+                <span class="project-tag">Web App</span>
               </div>
-              <div class="featured-project-actions">
+              <div style="margin-top: auto;">
                 <a
                   href="https://github.com/Elethuswrld/betgen"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="project-button"
+                  class="github-project"
                   aria-label="View BetGen project repository"
                 >
-                  View Project
+                  <i class="fab fa-github"></i> Repository
                 </a>
               </div>
             </div>
-          </article>
+          </div>
 
           <!-- Featured Project 2: WebTelligence -->
-          <article class="featured-project-card">
+          <div class="project-card-item">
             <img
               src="/assets/Projects/WebTelligence.png"
               alt="WebTelligence project image"
-              class="featured-project-image"
+              class="project-image"
             />
-            <div class="featured-project-content">
-              <div class="featured-project-title-container">
-                <h3>WebTelligence</h3>
-                <span class="featured-project-status-badge complete">Complete</span>
+            <div class="project-info">
+              <div class="project-title-container">
+                <strong>WebTelligence</strong>
+                <span class="project-status-badge complete">Complete</span>
               </div>
-              <p class="featured-project-description">
+              <p>
                 An AI-powered educational content generator that automates the creation of personalized learning materials to empower educators and learners.
               </p>
-              <div class="featured-project-tags">
-                <span class="featured-project-tag">No-Code</span>
-                <span class="featured-project-tag">Lovable</span>
-                <span class="featured-project-tag">AI</span>
-                <span class="featured-project-tag">Content Generation</span>
-                <span class="featured-project-tag">EdTech</span>
+              <div class="project-tags-container">
+                <span class="project-tag">No-Code</span>
+                <span class="project-tag">Lovable</span>
+                <span class="project-tag">AI</span>
+                <span class="project-tag">Content Generation</span>
+                <span class="project-tag">EdTech</span>
               </div>
-              <div class="featured-project-actions">
+              <div style="margin-top: auto;">
                 <a
                   href="https://preview--gen-ed-guru-40.lovable.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="project-button"
+                  class="github-project"
                   aria-label="View WebTelligence live demo"
                 >
-                  View Project
+                  <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
               </div>
             </div>
-          </article>
+          </div>
 
           <!-- Featured Project 3: E-commerce Website -->
-          <article class="featured-project-card">
+          <div class="project-card-item">
             <img
               src="/assets/Projects/Ellissneaker.png"
               alt="E-commerce Website project image"
-              class="featured-project-image"
+              class="project-image"
             />
-            <div class="featured-project-content">
-              <div class="featured-project-title-container">
-                <h3>E-commerce Website</h3>
-                <span class="featured-project-status-badge complete">Complete</span>
+            <div class="project-info">
+              <div class="project-title-container">
+                <strong>E-commerce Website</strong>
+                <span class="project-status-badge complete">Complete</span>
               </div>
-              <p class="featured-project-description">
+              <p>
                 A responsive e-commerce website showcasing product listings, user authentication, and a seamless shopping experience.
               </p>
-              <div class="featured-project-tags">
-                <span class="featured-project-tag">HTML</span>
-                <span class="featured-project-tag">CSS</span>
-                <span class="featured-project-tag">JavaScript</span>
-                <span class="featured-project-tag">E-commerce</span>
+              <div class="project-tags-container">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">E-commerce</span>
               </div>
-              <div class="featured-project-actions">
+              <div style="margin-top: auto;">
                 <a
                   href="https://ellissneakerfactory.netlify.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="project-button"
+                  class="github-project"
                   aria-label="View E-commerce Website live demo"
                 >
-                  View Project
+                  <i class="fas fa-external-link-alt"></i> Live Demo
                 </a>
               </div>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>

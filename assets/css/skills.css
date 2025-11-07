@@ -192,34 +192,6 @@
   transform: translateY(0);
 }
 
-.project-card-item {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  text-align: left;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-}
-
-.project-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  border-bottom: 1px solid #eee;
-}
-
-.project-info {
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
 .projects-display-grid h2 {
   grid-column: 1 / -1;
   font-size: 1.8rem;
@@ -228,70 +200,6 @@
   text-align: center;
   padding-bottom: 10px;
   border-bottom: 2px solid #eee;
-}
-
-.project-info p {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 15px;
-  min-height: 40px;
-  flex-grow: 1;
-}
-
-.project-title-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 5px;
-  flex-wrap: wrap;
-}
-
-.project-info strong {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #007ced;
-  margin-bottom: 0; /* Adjusted from 5px */
-  display: block;
-}
-
-.project-status-badge {
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.project-status-badge.complete {
-  background-color: #d1fae5; /* Green */
-  color: #065f46;
-}
-
-.project-status-badge.in-progress {
-  background-color: #dbeafe; /* Blue */
-  color: #1e40af;
-}
-
-.project-status-badge.planning {
-  background-color: #fee2e2; /* Red */
-  color: #991b1b;
-}
-
-.project-tags-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 15px;
-}
-
-.project-tag {
-  background-color: #e0e7ff;
-  color: #4338ca;
-  padding: 4px 12px;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
 }
 
 body.dark-mode .project-tag {
@@ -413,20 +321,6 @@ body.dark-mode .projects-display-grid h2 {
 
 body.dark-mode .project-info strong {
   color: #60a5fa;
-}
-
-body.dark-mode .project-status-badge.complete {
-  background-color: #064e3b;
-  color: #a7f3d0;
-}
-body.dark-mode .project-status-badge.in-progress {
-  background-color: #1e3a8a;
-  color: #bfdbfe;
-}
-body.dark-mode .project-status-badge.planning {
-  background-color: #7f1d1d;
-  color: #fecaca;
-}
 
 body.dark-mode .badge-card {
   background: #2a2a2a;
@@ -443,18 +337,6 @@ body.dark-mode .badge-date-id {
 
 body.dark-mode .badge-description {
   color: #ccc;
-}
-
-.github-project {
-    color: #007ced;
-    text-decoration: none;
-    font-weight: 500;
-}
-.github-project:hover {
-    text-decoration: underline;
-}
-body.dark-mode .github-project {
-    color: #60a5fa;
 }
 
 /* --- RESPONSIVE DESIGN --- */

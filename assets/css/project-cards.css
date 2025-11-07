@@ -1,24 +1,21 @@
 .project-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(
   margin: 40px auto 60px;
-  padding: 20px;
+  padding: 0;
   text-align: left;
-}
 
 .project-card-item {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  text-align: left;
+  text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #eee;
+  transition: tropd #eee;
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  padding: 20px;
 }
 
 .project-card-item:hover {
@@ -31,14 +28,22 @@
   height: 180px;
   object-fit: cover;
   display: block;
-  border-bottom: 1px solid #eee;
+  border-radius: 10px;
 }
 
 .project-info {
-  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+}
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  min-height: 40px;
+  text-align: center;
 }
 
 .project-title-container {
@@ -105,6 +110,28 @@
   font-weight: 500;
 }
 
+.project-links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.project-links .btn {
+  padding: 8px 20px;
+  border-radius: 5px;
+  background: #007ced;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #007ced;
+}
+
+.project-links .btn.active {
+  background: transparent;
+  color: #007ced;
+}
+
 .github-project {
   color: #007ced;
   text-decoration: none;
@@ -118,6 +145,10 @@
 body.dark-mode .project-card-item {
   background: #1e1e1e;
   border-color: #333;
+}
+
+body.dark-mode .project-title {
+  color: #f0f0f0;
 }
 
 body.dark-mode .project-image {
@@ -154,6 +185,15 @@ body.dark-mode .github-project {
   color: #60a5fa;
 }
 
+body.dark-mode .project-links .btn {
+  background: #007ced;
+  border-color: #007ced;
+}
+
+body.dark-mode .project-links .btn.active {
+  background: transparent;
+  color: #007ced;
+}
 @media (max-width: 768px) {
   .project-cards-grid {
     padding: 10px;

@@ -1,0 +1,228 @@
+/* Featured Projects Section Styles */
+.featured-projects-section {
+  padding: 60px 0;
+  text-align: center;
+  background: #f8f9fa; /* Light mode background */
+}
+
+body.dark-mode .featured-projects-section {
+  background: #181818; /* Dark mode background */
+}
+
+.featured-projects-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+body.dark-mode .featured-projects-section h2 {
+  color: #f0f0f0;
+}
+
+.featured-projects-section .section-description {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #666;
+}
+
+body.dark-mode .featured-projects-section .section-description {
+  color: #aaa;
+}
+
+.featured-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 columns on desktop */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Match wrapper padding */
+}
+
+@media (max-width: 992px) { /* Tablet */
+  .featured-projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 2 columns */
+  }
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .featured-projects-grid {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+}
+
+.featured-project-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left; /* Project info is left-aligned */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensure image border-radius works */
+}
+
+body.dark-mode .featured-project-card {
+  background: #222;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+.featured-project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 124, 237, 0.15); /* Subtle blue shadow on hover */
+}
+
+.featured-project-image {
+  width: 100%;
+  height: 200px; /* Consistent image height */
+  object-fit: cover;
+  border-radius: 15px 15px 0 0; /* Match card top border radius */
+}
+
+.featured-project-content {
+  padding: 20px;
+  flex-grow: 1; /* Allows content to push button to bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-project-title-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.featured-project-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0; /* Reset default margin */
+}
+
+body.dark-mode .featured-project-content h3 {
+  color: #f0f0f0;
+}
+
+.featured-project-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allow description to take available space */
+}
+
+body.dark-mode .featured-project-description {
+  color: #aaa;
+}
+
+.featured-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.featured-project-tag {
+  background: #e0e7ff; /* Light blue from existing tags */
+  color: #4338ca; /* Dark blue from existing tags */
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+body.dark-mode .featured-project-tag {
+  background-color: #3730a3;
+  color: #e0e7ff;
+}
+
+.featured-project-status-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.featured-project-status-badge.complete {
+  background-color: #d1fae5; /* Green */
+  color: #065f46;
+}
+
+body.dark-mode .featured-project-status-badge.complete {
+  background-color: #064e3b;
+  color: #a7f3d0;
+}
+
+.featured-project-status-badge.in-progress {
+  background-color: #dbeafe; /* Blue */
+  color: #1e40af;
+}
+
+body.dark-mode .featured-project-status-badge.in-progress {
+  background-color: #1e3a8a;
+  color: #bfdbfe;
+}
+
+.featured-project-status-badge.planning {
+  background-color: #fee2e2; /* Red */
+  color: #991b1b;
+}
+
+body.dark-mode .featured-project-status-badge.planning {
+  background-color: #7f1d1d;
+  color: #fecaca;
+}
+
+.featured-project-actions {
+  margin-top: auto; /* Pushes button to the bottom */
+  text-align: center;
+}
+
+.project-button {
+  display: inline-block;
+  background: #007ced;
+  color: #fff;
+  border: 2px solid #007ced;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none; /* Ensure it looks like a button */
+}
+
+.project-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.project-button:hover::before {
+  left: 100%;
+}
+
+.project-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 124, 237, 0.3);
+}
+
+body.dark-mode .project-button {
+  background: #007ced;
+  border-color: #007ced;
+}

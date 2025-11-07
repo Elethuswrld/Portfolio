@@ -1,9 +1,12 @@
 .project-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
   margin: 40px auto 60px;
   padding: 0;
   text-align: left;
+}
 
 .project-card-item {
   background: #fff;
@@ -11,7 +14,8 @@
   overflow: hidden;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: tropd #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -25,24 +29,25 @@
 
 .project-image {
   width: 100%;
-  height: 180px;
+  height: 150px;
   object-fit: cover;
   display: block;
   border-radius: 10px;
 }
 
 .project-info {
+  padding: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 .project-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #333;
   margin-top: 15px;
   margin-bottom: 15px;
-  min-height: 40px;
+  min-height: 30px;
   text-align: center;
 }
 

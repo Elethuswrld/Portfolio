@@ -96,6 +96,7 @@
                   role="tab"
                   aria-selected="false"
                 >
+                  <i class="fas fa-code"></i>
                   Languages
                 </button>
                 <button
@@ -104,6 +105,7 @@
                   role="tab"
                   aria-selected="false"
                 >
+                  <i class="fas fa-desktop"></i>
                   Frontend
                 </button>
                 <button
@@ -112,7 +114,17 @@
                   role="tab"
                   aria-selected="false"
                 >
+                  <i class="fas fa-server"></i>
                   Backend
+                </button>
+                <button
+                  class="tab"
+                  data-filter="security"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  <i class="fas fa-lock"></i>
+                  Security
                 </button>
                 <button
                   class="tab"
@@ -120,6 +132,7 @@
                   role="tab"
                   aria-selected="false"
                 >
+                  <i class="fas fa-paint-brush"></i>
                   Design
                 </button>
                 <button
@@ -137,6 +150,7 @@
                   role="tab"
                   aria-selected="false"
                 >
+                  <i class="fas fa-cloud-upload-alt"></i>
                   DevOps
                 </button>
                 <button
@@ -145,6 +159,7 @@
                   role="tab"
                   aria-selected="false"
                 >
+                  <i class="fas fa-vial"></i>
                   Testing
                 </button>
                 <button
@@ -153,6 +168,7 @@
                   role="tab"
                   aria-selected="false"
                 >
+                  <i class="fas fa-mobile-alt"></i>
                   Mobile
                 </button>
                 <button
@@ -161,6 +177,7 @@
                   role="tab"
                   aria-selected="false"
                 >
+                  <i class="fas fa-wrench"></i>
                   Tools
                 </button>
               </div>
@@ -330,8 +347,8 @@
                 </div>
               </div>
               <div
-                class="skill-card design frontend"
-                data-skill="Responsive Design"
+                class="skill-card accessibility"
+                data-skill="Responsive Design" 
                 data-proficiency="85" data-category="accessibility"
                 data-projects='[{"title":"Mobile-First Projects","status":"Planning","desc":"All projects are built with a focus on responsive and mobile-first methodologies.","img":"/assets/images/proj_responsive.jpg","repo":"#","live":"#"}]'
               >
@@ -342,8 +359,8 @@
                 </div>
               </div>
               <div
-                class="skill-card design tools"
-                data-skill="WCAG Accessibility"
+                class="skill-card accessibility tools"
+                data-skill="WCAG Accessibility" 
                 data-proficiency="70" data-category="accessibility"
                 data-projects='[{"title":"A11y Audits","status":"Planning","desc":"Projects adhering to WCAG standards for inclusive design.","img":"/assets/images/proj_a11y.jpg","repo":"#","live":"#"}]'
               >
@@ -479,6 +496,45 @@
               >
                 <i class="fas fa-brain"></i>
                 <span>PyTorch</span>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 45%"></div>
+                </div>
+              </div>
+
+              <div
+                class="skill-card security"
+                data-skill="OWASP Top 10"
+                data-proficiency="60"
+                data-projects='[{"title":"Security Audits","status":"Planning","desc":"Projects where I applied knowledge of the OWASP Top 10 to identify and mitigate common web application vulnerabilities.","img":"/assets/images/proj_owasp.jpg","repo":"#","live":"#"}]'
+              >
+                <i class="fas fa-shield-alt"></i>
+                <span>OWASP Top 10</span>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 60%"></div>
+                </div>
+              </div>
+
+              <div
+                class="skill-card security"
+                data-skill="Network Security"
+                data-proficiency="50"
+                data-projects='[{"title":"Firewall Configuration","status":"Planning","desc":"Basic network security configurations and understanding of protocols to protect application infrastructure.","img":"/assets/images/proj_network_sec.jpg","repo":"#","live":"#"}]'
+              >
+                <i class="fas fa-network-wired"></i>
+                <span>Network Security</span>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 50%"></div>
+                </div>
+              </div>
+
+              <div
+                class="skill-card security"
+                data-skill="Cryptography"
+                data-proficiency="45"
+                data-projects='[{"title":"Data Encryption","status":"Planning","desc":"Implementing basic encryption and hashing algorithms to secure sensitive user data in applications.","img":"/assets/images/proj_crypto.jpg","repo":"#","live":"#"}]'
+              >
+                <i class="fas fa-key"></i>
+                <span>Cryptography</span>
                 <div class="progress-bar">
                   <div class="progress-fill" style="width: 45%"></div>
                 </div>

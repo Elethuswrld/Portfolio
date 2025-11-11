@@ -228,11 +228,28 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         const card = entry.target;
         const proficiency = getProficiency(card); // Use existing helper function
+        const percentageSpan = card.querySelector(".proficiency-percentage");
         const progressBarFill = card.querySelector(".progress-fill");
 
-        if (progressBarFill) {
+        if (progressBarFill && percentageSpan) {
+          // Animate the progress bar
           progressBarFill.style.width = `${proficiency}%`;
+
+          // Animate the percentage number
+          let currentPercent = 0;
+          const duration = 1000; // 1 second, matches CSS transition
+          const stepTime = Math.abs(Math.floor(duration / proficiency));
+
+          const timer = setInterval(() => {
+            currentPercent++;
+            percentageSpan.textContent = `${currentPercent}%`;
+            if (currentPercent >= proficiency) {
+              clearInterval(timer);
+              percentageSpan.textContent = `${proficiency}%`; // Ensure it ends on the exact number
+            }
+          }, stepTime);
         }
+
         observer.unobserve(card); // Stop observing once animated
       }
     });

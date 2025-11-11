@@ -11,16 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Helper function to extract proficiency percentage
   function getProficiency(card) {
-    const proficiency = card.getAttribute("data-proficiency");
-    if (proficiency) return parseInt(proficiency, 10);
-
-    const fill = card.querySelector(".progress-fill");
-    if (!fill) return 0;
-    const style = fill.style.width;
-    return parseInt(style.replace("%", ""), 10);
+    const projectsData = card.dataset.projects;
+    if (projectsData) {
+      try {
+        const projects = JSON.parse(projectsData);
+        const projectCount = projects.length;
+        // Your rule: 20 projects = 100%, so each project is 5%
+        return Math.min(100, projectCount * 5);
+      } catch (e) {
+        return 0; // Default to 0 on error
+      }
+    }
+    return 0; // Default to 0 if no projects data
   }
 
-  // Main function to sort the skill cards
   function sortSkills(sortBy) {
     const grid = document.querySelector(".skills-grid");
     const skillCards = Array.from(
@@ -203,4 +207,36 @@ document.addEventListener("DOMContentLoaded", () => {
   sortSelect.addEventListener("change", (event) => {
     sortSkills(event.target.value);
   });
+
+  /* --- ANIMATE SKILL BARS ON SCROLL --- */
+  const observerOptions = {
+    root: null, // Use the viewport as the root
+    rootMargin: "0px",
+    threshold: 0.1, // Trigger when 10% of the element is visible
+  };
+
+  // Set initial width to 0 for animation
+  skillCards.forEach((card) => {
+    const progressBarFill = card.querySelector(".progress-fill");
+    if (progressBarFill) {
+      progressBarFill.style.width = "0%";
+    }
+  });
+
+  const animateObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const proficiency = getProficiency(card); // Use existing helper function
+        const progressBarFill = card.querySelector(".progress-fill");
+
+        if (progressBarFill) {
+          progressBarFill.style.width = `${proficiency}%`;
+        }
+        observer.unobserve(card); // Stop observing once animated
+      }
+    });
+  }, observerOptions);
+
+  skillCards.forEach((card) => animateObserver.observe(card));
 });

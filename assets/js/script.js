@@ -112,21 +112,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Intersection observer for footer animation
-  const observerOptions = {
+  //================================================================
+  // 5.1. INTERSECTION OBSERVER FOR FOOTER
+  //================================================================
+  const footerObserverOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
   };
 
-  const observer = new IntersectionObserver((entries) => {
+  const footerObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.style.opacity = "1";
         entry.target.style.transform = "translateY(0)";
-        observer.unobserve(entry.target);
+        footerObserver.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, footerObserverOptions);
 
   const footer = document.querySelector(".site-footer");
   if (footer) {
@@ -134,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     footer.style.opacity = "0";
     footer.style.transform = "translateY(50px)";
     footer.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    observer.observe(footer);
+    footerObserver.observe(footer);
   }
 
   //================================================================
@@ -206,4 +208,26 @@ document.addEventListener("DOMContentLoaded", () => {
   scrollTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  //================================================================
+  // 8. FADE-IN ANIMATION FOR CARDS (Projects & Certificates)
+  //================================================================
+  const fadeInCards = document.querySelectorAll(".fade-in-card");
+
+  const fadeInObserverOptions = {
+    root: null, // viewport
+    rootMargin: "0px",
+    threshold: 0.2, // Trigger when 20% of the item is visible
+  };
+
+  const fadeInObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target); // Stop observing once it's visible
+      }
+    });
+  }, fadeInObserverOptions);
+
+  fadeInCards.forEach((card) => fadeInObserver.observe(card));
 });

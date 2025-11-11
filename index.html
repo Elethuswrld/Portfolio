@@ -5,11 +5,227 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elethu's Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/Home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/assets/css/project-cards.css" />
+
+    <style>
+      /* Styles for the Hero Section */
+      /* Page-specific styles for Home.css */
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 4rem;
+      }
+
+      .hero-pic {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 15px solid #007ced;
+        box-shadow: 0 0 20px rgba(0, 124, 237, 0.4);
+      }
+
+      .hero-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-text {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-text h5 {
+        font-size: 14px;
+        font-weight: 400;
+        color: #666;
+        margin-bottom: 40px;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+        color: #333;
+      }
+
+      .hero-text .input {
+        color: #007ced;
+        font-weight: 600;
+      }
+
+      .hero-text p {
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+
+      .btn-group {
+        display: flex;
+        gap: 20px;
+      }
+
+      .btn-group .btn {
+        padding: 12px 25px;
+        border-radius: 5px;
+        background: #007ced;
+        color: #fff;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-group .btn:hover {
+        transform: scale(1.05);
+      }
+
+      .btn-group .btn.active {
+        background: transparent;
+        color: #007ced;
+        border: 1px solid #007ced;
+      }
+
+      .social {
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .social i {
+        color: #007ced;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .social i:hover {
+        transform: scale(1.2);
+      }
+
+      /* Dark Mode Specific Styles */
+      body.dark-mode .hero-text h5,
+      body.dark-mode .hero-text p {
+        color: #ccc;
+      }
+
+      body.dark-mode .hero-text h1 {
+        color: #f0f0f0;
+      }
+
+      /* Certificates Section */
+      .certificates-section {
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .certificates-section h2 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      body.dark-mode .certificates-section h2 {
+        color: #f0f0f0;
+      }
+
+      .certificates-section p {
+        max-width: 700px;
+        margin: 0 auto 40px;
+        color: #666;
+      }
+
+      body.dark-mode .certificates-section p {
+        color: #aaa;
+      }
+
+      .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .certificate-card {
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      body.dark-mode .certificate-card {
+        background: #2a2a2a;
+        border-color: #444;
+      }
+
+      .certificate-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 124, 237, 0.1);
+      }
+
+      .certificate-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
+
+      .certificate-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      body.dark-mode .certificate-title {
+        color: #f0f0f0;
+      }
+
+      .certificate-card .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background: #007ced;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      .skills-section {
+        margin-top: 15px;
+        text-align: left;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+      }
+
+      .certificate-card.active .skills-section {
+        max-height: 500px; /* Adjust as needed */
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .skill-tag {
+        background: #e0e0e0;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+      }
+
+      body.dark-mode .skill-tag {
+        background: #444;
+        color: #f0f0f0;
+      }
+    </style>
   </head>
 
   <body>
@@ -23,30 +239,28 @@
       <span></span>
     </div>
 
-    <header>
+    <div class="hero-header">
       <div class="wrapper">
-        <a href="/index.html" class="logo" aria-label="Elethuswrld Home">
-          <i class="fa-solid fa-e"></i>
-          <div class="logo-text">Elethuswrld</div>
-        </a>
-        <nav role="navigation">
-          <button class="togglebtn" aria-expanded="false" aria-controls="nav-links-menu" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <ul class="navlinks" id="nav-links-menu">
-            <li><a href="/index.html" class="active">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/skills.html">Skills</a></li>
-            <li><a href="/gamedev.html">Game Dev</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main class="hero-header">
-      <div class="wrapper">
+        <header>
+          <div class="logo">
+            <i class="fa-solid fa-e"></i>
+            <div class="logo-text">Elethuswrld</div>
+          </div>
+          <nav>
+            <div class="togglebtn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <ul class="navlinks">
+              <li><a href="/index.html" class="active">Home</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/skills.html">Skills</a></li>
+              <li><a href="/gamedev.html">Game Dev</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
         <div class="container">
           <div class="hero-pic">
             <img
@@ -84,7 +298,7 @@
           </div>
         </div>
       </div>
-    </main>
+    </div>
     
     <!-- Featured Projects Section -->
     <section id="featured-projects" class="certificates-section">

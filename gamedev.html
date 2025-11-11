@@ -13,8 +13,140 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/gamedev.css" />
+    <style>
+      /* GAMER-THEME OVERRIDES */
+      :root {
+        --gamer-glow: #00f2ff;
+        --gamer-glow-secondary: #ff00ff;
+        --gamer-bg: #0a0a14;
+        --gamer-card-bg: #101222;
+        --gamer-border: rgba(0, 242, 255, 0.3);
+      }
+
+      .gamedev-section {
+        background: var(--gamer-bg);
+        border-top: 1px solid var(--gamer-border);
+        padding-bottom: 80px;
+      }
+
+      .gamedev-hero h1,
+      .gamedev-section .project-card h3,
+      .future-plans-section h2 {
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+        color: #fff;
+        text-shadow: 0 0 5px var(--gamer-glow), 0 0 10px var(--gamer-glow), 0 0 15px var(--gamer-glow-secondary);
+      }
+
+      .gamedev-hero p {
+        color: #ccc;
+      }
+
+      .gamedev-hero-icon .fa-gamepad {
+        color: var(--gamer-glow);
+        text-shadow: 0 0 15px var(--gamer-glow);
+        animation: pulseGlow 2s infinite alternate;
+      }
+
+      @keyframes pulseGlow {
+        from {
+          transform: scale(1);
+          text-shadow: 0 0 15px var(--gamer-glow);
+        }
+        to {
+          transform: scale(1.1);
+          text-shadow: 0 0 25px var(--gamer-glow), 0 0 10px var(--gamer-glow-secondary);
+        }
+      }
+
+      .gamedev-section .project-card {
+        background: var(--gamer-card-bg);
+        border: 1px solid var(--gamer-border);
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+        transition: all 0.3s ease;
+      }
+
+      .gamedev-section .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px var(--gamer-glow);
+        border-color: var(--gamer-glow);
+      }
+
+      .gamedev-section .project-card p {
+        color: #aab;
+      }
+
+      .gamedev-section .tech-tag {
+        background: rgba(0, 242, 255, 0.1);
+        color: var(--gamer-glow);
+        border: 1px solid var(--gamer-border);
+      }
+
+      .gamedev-section .project-btn {
+        background: transparent;
+        border: 2px solid var(--gamer-glow);
+        color: var(--gamer-glow);
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+      }
+
+      .gamedev-section .project-btn:hover {
+        background: var(--gamer-glow);
+        color: var(--gamer-bg);
+        box-shadow: 0 0 15px var(--gamer-glow);
+      }
+
+      /* Future Plans Section */
+      .future-plans-section {
+        margin-top: 80px;
+        text-align: center;
+      }
+
+      .future-plans-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+      }
+
+      .plan-card {
+        background: var(--gamer-card-bg);
+        border: 1px solid var(--gamer-border);
+        padding: 25px;
+        text-align: center;
+        clip-path: polygon(0 20px, 20px 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      .plan-card i {
+        font-size: 2.5rem;
+        color: var(--gamer-glow-secondary);
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px var(--gamer-glow-secondary);
+      }
+
+      .plan-card h4 {
+        font-family: 'Orbitron', sans-serif;
+        color: #fff;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
+      .plan-card p {
+        color: #aab;
+        font-size: 0.9rem;
+      }
+
+      /* Dark Mode Consistency */
+      body.dark-mode .gamedev-section {
+        background: var(--gamer-bg);
+      }
+    </style>
   </head>
   <body>
     <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
@@ -143,6 +275,41 @@
                 <div class="project-links">
                   <a href="https://github.com/Elethuswrld/Godot-Engine-2D-RPG" target="_blank" rel="noopener noreferrer" class="project-btn">Repository</a>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Future Plans Section -->
+          <div class="future-plans-section">
+            <h2>The Road Ahead</h2>
+            <div class="future-plans-grid">
+              <div class="plan-card">
+                <i class="fas fa-flag-checkered"></i>
+                <h4>Complete Core Projects</h4>
+                <p>
+                  Finalize the core mechanics and level design for the current 2D Platformer, Survival Game, and 2D RPG prototypes.
+                </p>
+              </div>
+              <div class="plan-card">
+                <i class="fas fa-users"></i>
+                <h4>Explore Multiplayer</h4>
+                <p>
+                  Dive into networking by implementing basic multiplayer functionality in a new prototype using Mirror (Unity) or Unreal's networking system.
+                </p>
+              </div>
+              <div class="plan-card">
+                <i class="fas fa-infinity"></i>
+                <h4>Procedural Generation</h4>
+                <p>
+                  Learn and apply procedural content generation (PCG) techniques to create dynamic and endlessly replayable game levels.
+                </p>
+              </div>
+              <div class="plan-card">
+                <i class="fas fa-rocket"></i>
+                <h4>Ship a Small Game</h4>
+                <p>
+                  Develop a small, polished game from start to finish and release it on a platform like itch.io to complete a full development cycle.
+                </p>
               </div>
             </div>
           </div>

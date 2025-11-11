@@ -1,59 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const contactForm = document.getElementById("contactForm");
-  const reviewForm = document.getElementById("reviewForm");
+  // Function to handle form submission
+  async function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
 
-  const handleFormSubmit = async (form, messageEl) => {
-    const formURL = form.getAttribute("action");
-    const submitBtn = form.querySelector(".submit-btn");
-    const originalText = submitBtn.innerHTML;
+    const form = event.target;
+    const formData = new FormData(form);
+    const formMessage = form.previousElementSibling; // Get the message div right before the form
 
-    submitBtn.innerHTML = "Sending...";
-    submitBtn.disabled = true;
-    messageEl.classList.remove("show", "success", "error");
+    // Show a pending message
+    formMessage.textContent = "Sending...";
+    formMessage.className = "form-message"; // Reset classes
 
     try {
-      const response = await fetch(formURL, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       });
 
       if (response.ok) {
-        messageEl.textContent = "Thank you! Your message has been sent.";
-        messageEl.className = "form-message show success";
-        form.reset();
+        // Success
+        formMessage.textContent = "Thank you! Your message has been sent successfully.";
+        formMessage.classList.add("show", "success");
+        form.reset(); // Clear the form fields
       } else {
+        // Server-side error
         const data = await response.json();
-        if (data.errors) {
-          messageEl.textContent = data.errors.map((e) => e.message).join(", ");
-        } else {
-          messageEl.textContent = "Oops! There was an issue. Please try again.";
-        }
-        messageEl.className = "form-message show error";
+        const errorMessage = data.errors ? data.errors.map((error) => error.message).join(", ") : "Oops! There was a problem submitting your form.";
+        throw new Error(errorMessage);
       }
     } catch (error) {
-      messageEl.textContent = "Oops! There was an issue. Please try again.";
-      messageEl.className = "form-message show error";
+      // Network or other error
+      formMessage.textContent = error.message || "An unexpected error occurred. Please try again.";
+      formMessage.classList.add("show", "error");
     } finally {
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
+      // Hide the message after 5 seconds
+      setTimeout(() => {
+        formMessage.classList.remove("show");
+      }, 5000);
     }
-  };
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      handleFormSubmit(contactForm, document.getElementById("formMessage"));
-    });
   }
 
-  if (reviewForm) {
-    reviewForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      handleFormSubmit(
-        reviewForm,
-        document.getElementById("reviewFormMessage")
-      );
-    });
-  }
+  // Attach event listeners to both forms
+  const contactForm = document.getElementById("contactForm");
+  const reviewForm = document.getElementById("reviewForm");
+
+  if (contactForm) contactForm.addEventListener("submit", handleFormSubmit);
+  if (reviewForm) reviewForm.addEventListener("submit", handleFormSubmit);
 });

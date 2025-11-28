@@ -33,12 +33,17 @@
             <div class="logo-text">Elethuswrld</div>
           </a>
           <nav>
-            <div class="togglebtn">
+            <button
+              class="togglebtn"
+              aria-expanded="false"
+              aria-controls="nav-links-menu"
+              aria-label="Toggle navigation menu"
+            >
               <span></span>
               <span></span>
               <span></span>
-            </div>
-            <ul class="navlinks">
+            </button>
+            <ul class="navlinks" id="nav-links-menu">
               <li><a href="/index.html">Home</a></li>
               <li><a href="/about.html" class="active">About</a></li>
               <li><a href="/skills.html">Skills</a></li>
@@ -80,6 +85,7 @@
               <div class="profile-img">
                 <img
                   src="/assets/images/1.jpg"
+                  loading="lazy"
                   alt="Elethu Cotyi profile picture"
                 />
               </div>
@@ -164,6 +170,7 @@
             <div class="experience-container">
               <div class="experience-image">
                 <img
+                  loading="lazy"
                   src="/assets/images/Codetelligence.png"
                   alt="Codetelligence company logo"
                 />
@@ -188,6 +195,7 @@
             <div class="experience-container">
               <div class="experience-image">
                 <img
+                  loading="lazy"
                   src="/assets/images/Capaciti.jpg"
                   alt="Capaciti company logo"
                 />

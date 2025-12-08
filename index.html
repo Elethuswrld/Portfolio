@@ -247,13 +247,18 @@
             <i class="fa-solid fa-e"></i>
             <div class="logo-text">Elethuswrld</div>
           </a>
-          <nav>
-            <div class="togglebtn">
+          <nav role="navigation">
+            <button
+              class="togglebtn"
+              aria-expanded="false"
+              aria-controls="nav-links-menu"
+              aria-label="Toggle navigation menu"
+            >
               <span></span>
               <span></span>
               <span></span>
-            </div>
-            <ul class="navlinks">
+            </button>
+            <ul class="navlinks" id="nav-links-menu">
               <li><a href="/index.html" class="active">Home</a></li>
               <li><a href="/about.html">About</a></li>
               <li><a href="/skills.html">Skills</a></li>
@@ -391,6 +396,39 @@
             </div>
           </div>
 
+          <!-- Featured Project: Trading Robot (with fade-in) -->
+          <div class="project-card-item fade-in-card">
+            <img
+              src="/assets/Projects/Trading Robot.png"
+              loading="lazy"
+              alt="Automated Trading Robot project image"
+              class="project-image"
+            />
+            <div class="project-info">
+              <div class="project-title-container">
+                <strong>Automated Trading Robot</strong>
+                <span class="project-status-badge in-progress">In Progress</span>
+              </div>
+              <p>
+                An automated trading robot for MT5, with a web dashboard for real-time monitoring, strategy configuration, and backtesting.
+              </p>
+              <div class="project-tags-container">
+                <span class="project-tag">Lovable</span>
+                <span class="project-tag">No-Code</span>
+                <span class="project-tag">Trading</span>
+                <span class="project-tag">Automation</span>
+              </div>
+              <div style="margin-top: auto;">
+                <a href="https://github.com/Elethuswrld/trading-robot" target="_blank" rel="noopener noreferrer" class="github-project" aria-label="View Automated Trading Robot repository">
+                  <i class="fab fa-github"></i> Repository
+                </a>
+                <a href="https://ignite-algo-engine.lovable.app" target="_blank" rel="noopener noreferrer" class="github-project" aria-label="View Automated Trading Robot live demo">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
           <!-- Featured Project 2: WebTelligence (with fade-in) -->
           <div class="project-card-item fade-in-card">
             <img
@@ -451,7 +489,7 @@
               alt="AI and Accessibility Certificate"
             />
             <a
-              href="/assets/certificates/AI/AI_and_Accessibility_Certificate.pdf"
+              href="/assets/certificates/AI/AI and Accessibility Certificate.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -481,7 +519,7 @@
               alt="AI Fundamentals Certificate"
             />
             <a
-              href="/assets/certificates/AI/AI_Fundamentals_Certificate.pdf"
+              href="/assets/certificates/AI/AI Fundamentals Certificate.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -511,7 +549,7 @@
               alt="Generative AI Certificate"
             />
             <a
-              href="/assets/certificates/AI/Generative_AI_Certificate.pdf"
+              href="/assets/certificates/AI/Generative AI Certificate.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -541,7 +579,7 @@
               alt="Microsoft Copilot Certificate"
             />
             <a
-              href="/assets/certificates/AI/Microsoft_Copilot_Certificate.pdf"
+              href="/assets/certificates/AI/Microsoft Copilot Certificate.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -571,7 +609,7 @@
               alt="Responsible AI Certificate"
             />
             <a
-              href="/assets/certificates/AI/Responsible_AI_Certificate.pdf"
+              href="/assets/certificates/AI/Responsible AI Certificate.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -601,7 +639,7 @@
               alt="Advanced Learning Algorithms Certificate"
             />
             <a
-              href="/assets/certificates/AI/Advanced_Learning_Algorithms.pdf"
+              href="/assets/certificates/AI/Advanced Learning Algorithms.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -631,7 +669,7 @@
               alt="AI Essentials Certificate"
             />
             <a
-              href="/assets/certificates/AI/AI_Essentials.pdf"
+              href="/assets/certificates/AI/AI Essentials.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -661,7 +699,7 @@
               alt="AI For Everyone Certificate"
             />
             <a
-              href="/assets/certificates/AI/AI_For_Everyone.pdf"
+              href="/assets/certificates/AI/AI For Everyone.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -693,7 +731,7 @@
               alt="AI Foundations Prompt Engineering Certificate"
             />
             <a
-              href="/assets/certificates/AI/AI_Foundations_Prompt_Engineering_with_ChatGPT.pdf"
+              href="/assets/certificates/AI/AI Foundations Prompt Engineering with ChatGPT.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -725,7 +763,7 @@
               alt="Generative AI with Large Language Models Certificate"
             />
             <a
-              href="/assets/certificates/AI/Generative_AI_with_Large_Language_Models.pdf"
+              href="/assets/certificates/AI/Generative AI with Large Language Models.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -757,7 +795,7 @@
               alt="Introduction to Artificial Intelligence Certificate"
             />
             <a
-              href="/assets/certificates/AI/Introduction_to_Artificial_Intelligence.pdf"
+              href="/assets/certificates/AI/Introduction to Artificial Intelligence (AI).pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -787,7 +825,7 @@
               alt="Introduction to Generative AI Certificate"
             />
             <a
-              href="/assets/certificates/AI/Introduction_to_Generative_AI.pdf"
+              href="/assets/certificates/AI/Introduction to Generative AI.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -851,7 +889,7 @@
               alt="Supervised Machine Learning Certificate"
             />
             <a
-              href="/assets/certificates/AI/Supervised_Machine_Learning_Regression_and_Classification.pdf"
+              href="/assets/certificates/AI/Supervised Machine Learning Regression and Classification.pdf"
               target="_blank"
               class="btn"
               >View PDF</a
@@ -881,7 +919,7 @@
               alt="Digital Learning Certificate"
             />
             <a
-              href="/assets/certificates/Pro/digital_certificate.pdf"
+              href="/assets/certificates/AI/Digital Certificate.pdf"
               target="_blank"
               class="btn"
               >View PDF</a

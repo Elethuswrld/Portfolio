@@ -1,215 +1,194 @@
+/*================================================================
+    1. HERO SECTION (MAIN) - ALIGNMENT FIXES
+================================================================*/
+.hero-header {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  /* PUSH CONTENT DOWN: Compensate for the fixed header height (approx. 80px) */
+  padding-top: 80px;
+  /* FLEXBOX for perfect vertical centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-      /* Styles for the Hero Section */
-      /* Page-specific styles for Home.css */
-      .container {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding-top: 4rem;
-      }
+/* Content Container (Image and Text) */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Nice spacing between content blocks */
+  align-items: center;
+  gap: 40px;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-      .hero-pic {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 15px solid #007ced;
-        box-shadow: 0 0 20px rgba(0, 124, 237, 0.4);
-      }
+.hero-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 15px solid #007ced;
+  margin: 1rem;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 20px rgba(0, 124, 237, 0.4);
+}
 
-      .hero-pic img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+.hero-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
 
-      .hero-text {
-        max-width: 500px;
-        display: flex;
-        flex-direction: column;
-      }
+/* Hero Text */
+.hero-text {
+  max-width: 500px;
+  text-align: left; /* Default alignment for desktop */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-      .hero-text h5 {
-        font-size: 14px;
-        font-weight: 400;
-        color: #666;
-        margin-bottom: 40px;
-      }
+.hero-text h5 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 40px;
+}
 
-      .hero-text h1 {
-        font-size: 3rem;
-        color: #333;
-      }
+.hero-text .input {
+  color: #007ced;
+  font-weight: 600;
+}
 
-      .hero-text .input {
-        color: #007ced;
-        font-weight: 600;
-      }
+.hero-text h1 {
+  font-size: 3rem;
+  color: #333;
+}
 
-      .hero-text p {
-        color: #666;
-        font-size: 1rem;
-        line-height: 1.8;
-        margin-bottom: 30px;
-      }
+.hero-text p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
 
-      .btn-group {
-        display: flex;
-        gap: 20px;
-      }
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 20px;
+}
 
-      .btn-group .btn {
-        padding: 12px 25px;
-        border-radius: 5px;
-        background: #007ced;
-        color: #fff;
-        font-weight: 500;
-        transition: all 0.3s ease;
-      }
+.btn-group .btn {
+  padding: 12px 25px;
+  border-radius: 5px;
+  background: #007ced;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
 
-      .btn-group .btn:hover {
-        transform: scale(1.05);
-      }
+.btn-group .btn:hover {
+  transform: scale(1.05);
+}
 
-      .btn-group .btn.active {
-        background: transparent;
-        color: #007ced;
-        border: 1px solid #007ced;
-      }
+.btn-group .btn.active {
+  background: transparent;
+  color: #007ced;
+  border: 1px solid #007ced;
+}
 
-      .social {
-        margin-top: 30px;
-        display: flex;
-        gap: 20px;
-      }
+/* Social Icons */
+.social {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
 
-      .social i {
-        color: #007ced;
-        font-size: 1.5rem;
-        transition: all 0.3s ease;
-      }
+.social i {
+  color: #007ced;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
 
-      .social i:hover {
-        transform: scale(1.2);
-      }
+.social i:hover {
+  transform: scale(1.2);
+}
 
-      /* Dark Mode Specific Styles */
-      body.dark-mode .hero-text h5,
-      body.dark-mode .hero-text p {
-        color: #ccc;
-      }
+/*================================================================
+    2. DARK MODE STYLES
+================================================================*/
+body.dark-mode .hero-header {
+  background: #111;
+}
+body.dark-mode .hero-text h1 {
+  color: #f0f0f0;
+}
+body.dark-mode .hero-text h5,
+body.dark-mode .hero-text p {
+  color: #ccc;
+}
 
-      body.dark-mode .hero-text h1 {
-        color: #f0f0f0;
-      }
+/*================================================================
+    3. RESPONSIVE DESIGN (MEDIA QUERIES)
+================================================================*/
+@media (max-width: 992px) {
+  .container {
+    margin-top: 0;
+  }
+  .hero-header {
+    padding-top: 80px;
+  }
+}
 
-      /* Certificates Section */
-      .certificates-section {
-        padding: 60px 0;
-        text-align: center;
-      }
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 40px 0;
+    margin-top: 0;
+  }
 
-      .certificates-section h2 {
-        font-size: 2.5rem;
-        color: #333;
-        margin-bottom: 10px;
-      }
+  .hero-text {
+    text-align: center;
+    padding: 1rem;
+  }
 
-      body.dark-mode .certificates-section h2 {
-        color: #f0f0f0;
-      }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
 
-      .certificates-section p {
-        max-width: 700px;
-        margin: 0 auto 40px;
-        color: #666;
-      }
+  .hero-pic {
+    width: 250px;
+    height: 250px;
+    border-width: 10px;
+  }
 
-      body.dark-mode .certificates-section p {
-        color: #aaa;
-      }
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-      .certificates-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-      }
+  .social {
+    justify-content: center;
+  }
+}
 
-      .certificate-card {
-        background: #fff;
-        border: 1px solid #eee;
-        padding: 20px;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-      }
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
 
-      body.dark-mode .certificate-card {
-        background: #2a2a2a;
-        border-color: #444;
-      }
-
-      .certificate-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 124, 237, 0.1);
-      }
-
-      .certificate-card img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-bottom: 15px;
-      }
-
-      .certificate-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 15px;
-      }
-
-      body.dark-mode .certificate-title {
-        color: #f0f0f0;
-      }
-
-      .certificate-card .btn {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 20px;
-        background: #007ced;
-        color: #fff;
-        border-radius: 5px;
-      }
-
-      .skills-section {
-        margin-top: 15px;
-        text-align: left;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease-out;
-      }
-
-      .certificate-card.active .skills-section {
-        max-height: 500px; /* Adjust as needed */
-      }
-
-      .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-      }
-
-      .skill-tag {
-        background: #e0e0e0;
-        color: #333;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 0.9rem;
-      }
-
-      body.dark-mode .skill-tag {
-        background: #444;
-        color: #f0f0f0;
-      }
+  .hero-pic {
+    width: 200px;
+    height: 200px;
+  }
+}

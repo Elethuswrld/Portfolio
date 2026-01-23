@@ -1,2 +1,4 @@
-// No page-specific JavaScript needed for gamedev.html at the moment.
-// The main.js file handles the shared functionality.
+// gamedev.js — removed as part of cleanup.
+// If you need the original script, restore it from git history.
+
+// intentionally empty

@@ -4,12 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="Welcome to the portfolio of Elethu Cotyi, a passionate software developer and game developer. Explore my featured projects, skills, and professional certificates." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Elethu's Portfolio" />
+    <meta property="og:description" content="Welcome to the portfolio of Elethu Cotyi, a passionate software developer and game developer. Explore my featured projects, skills, and professional certificates." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:image" content="/assets/images/1.jpg" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Elethu's Portfolio" />
+    <meta name="twitter:description" content="Welcome to the portfolio of Elethu Cotyi, a passionate software developer and game developer. Explore my featured projects, skills, and professional certificates." />
+    <meta name="twitter:image" content="/assets/images/1.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elethu's Portfolio</title>
-    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="/assets/css/project-cards.css" />
+    <!-- <link rel="stylesheet" href="/assets/css/project-cards.css" /> -->
 
     <style>
       /* Styles for the Hero Section */
@@ -247,7 +258,7 @@
             <i class="fa-solid fa-e"></i>
             <div class="logo-text">Elethuswrld</div>
           </a>
-          <nav role="navigation">
+          <nav role="navigation" aria-label="Main navigation">
             <button
               class="togglebtn"
               aria-expanded="false"
@@ -266,13 +277,17 @@
             </ul>
           </nav>
         </header>
-        <div class="container">
-          <div class="hero-pic">
-            <img
-              src="/assets/images/1.jpg"
-              alt="Elethu Cotyi profile picture"
-            />
-          </div>
+        <main>
+          <div class="container">
+            <div class="hero-pic">
+              <picture>
+                <source srcset="/assets/images/1.webp" type="image/webp">
+                <img
+                  src="/assets/images/1.jpg"
+                  alt="Elethu Cotyi profile picture"
+                />
+              </picture>
+            </div>
           <div class="hero-text">
             <h5>Hi, I'm a <span class="input">Software Developer</span></h5>
             <h1>Elethu Cotyi</h1>
@@ -2026,6 +2041,6 @@
     </button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/bundle.min.js"></script>
   </body>
 </html>

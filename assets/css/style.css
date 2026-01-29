@@ -1,3 +1,29 @@
+/* Container for hero section */
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 4rem;
+  gap: 2rem;
+}
+
+/* Hero profile picture */
+.hero-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 15px solid #007ced;
+  box-shadow: 0 0 20px rgba(0, 124, 237, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-pic img, .hero-pic picture img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 /* General Styles */
 * {
   box-sizing: border-box;

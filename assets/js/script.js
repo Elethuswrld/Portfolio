@@ -1,8 +1,14 @@
+// Utility functions for DOM queries and class/ARIA handling
+const $ = (selector, scope = document) => scope.querySelector(selector);
+const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+const toggleClass = (el, className) => el && el.classList.toggle(className);
+const setAria = (el, attr, value) => el && el.setAttribute(attr, value);
+
 document.addEventListener("DOMContentLoaded", () => {
   //================================================================
   // 1. LOADING ANIMATION
   //================================================================
-  const loading = document.querySelector(".loading");
+  const loading = $(".loading");
   if (loading) {
     // Use a timeout to ensure the loading animation is visible for a minimum duration
     setTimeout(() => {
@@ -17,47 +23,50 @@ document.addEventListener("DOMContentLoaded", () => {
   //================================================================
   // 2. DARK MODE TOGGLE & PERSISTENCE
   //================================================================
-  const darkModeToggle = document.getElementById("darkModeToggle");
+  const darkModeToggle = $("#darkModeToggle");
 
-  // Function to apply the theme
-  const applyTheme = (isDark) => {
-    if (isDark) {
-      document.body.classList.add("dark-mode");
+  // Function to update icon based on mode
+  const updateDarkModeIcon = () => {
+    if (document.body.classList.contains("dark-mode")) {
       darkModeToggle.textContent = "☀️";
     } else {
-      document.body.classList.remove("dark-mode");
       darkModeToggle.textContent = "🌙";
     }
   };
 
-  // Check initial preference
-  const prefersDark = localStorage.getItem("darkMode") === "enabled" || 
-                      (localStorage.getItem("darkMode") === null && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  // Set initial theme based on saved preference or system
+  const prefersDark = localStorage.getItem("darkMode") === "enabled" ||
+    (localStorage.getItem("darkMode") === null && window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   if (darkModeToggle) {
-    applyTheme(prefersDark);
+    if (prefersDark) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+    updateDarkModeIcon();
 
     darkModeToggle.addEventListener("click", () => {
-      const isDark = document.body.classList.toggle("dark-mode");
-      applyTheme(isDark); // Update icon
-      localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+      document.body.classList.toggle("dark-mode");
+      updateDarkModeIcon();
+      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode") ? "enabled" : "disabled");
     });
   }
 
   //================================================================
   // 3. NAVIGATION (TOGGLE & ACTIVE LINK)
   //================================================================
-  const toggleBtn = document.querySelector(".togglebtn");
-  const navLinks = document.querySelector(".navlinks");
+  const toggleBtn = $(".togglebtn");
+  const navLinks = $(".navlinks");
 
   if (toggleBtn && navLinks) {
     // Active Link Setter
     const path = window.location.pathname;
-    const currentLink = document.querySelector(`.navlinks li a[href="${path}"]`);
+    const currentLink = $(`.navlinks li a[href="${path}"]`);
 
     // Fallback for root path
     if (!currentLink && (path === "/" || path.endsWith("index.html"))) {
-      const homeLink = document.querySelector('.navlinks li a[href="/index.html"]');
+      const homeLink = $(".navlinks li a[href='/index.html']");
       if (homeLink) {
         homeLink.classList.add("active-page");
       }
@@ -67,10 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Navbar Toggle functionality
     toggleBtn.addEventListener("click", () => {
-      const isExpanded = navLinks.classList.toggle("open");
-      toggleBtn.classList.toggle("click");
+      const isExpanded = toggleClass(navLinks, "open");
+      toggleClass(toggleBtn, "click");
       // Update ARIA attribute for accessibility
-      toggleBtn.setAttribute("aria-expanded", isExpanded);
+      setAria(toggleBtn, "aria-expanded", isExpanded);
     });
 
     // Close mobile menu when clicking a link
@@ -78,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target.tagName === "A") {
         navLinks.classList.remove("open");
         toggleBtn.classList.remove("click");
-        toggleBtn.setAttribute("aria-expanded", "false");
+        setAria(toggleBtn, "aria-expanded", "false");
       }
     });
 
@@ -87,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.innerWidth > 768) {
         navLinks.classList.remove("open");
         toggleBtn.classList.remove("click");
-        toggleBtn.setAttribute("aria-expanded", "false");
+        setAria(toggleBtn, "aria-expanded", "false");
       }
     });
   }
@@ -95,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //================================================================
   // 4. TYPED.JS EFFECT
   //================================================================
-  if (document.querySelector(".input")) {
+  if ($(".input")) {
     new Typed(".input", {
       strings: [
         "Junior Full Stack Developer",
@@ -113,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 5. SMOOTH SCROLLING & INTERSECTION OBSERVER
   //================================================================
   // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  $$("a[href^='#']").forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute("href"));
@@ -144,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, footerObserverOptions);
 
-  const footer = document.querySelector(".site-footer");
+  const footer = $(".site-footer");
   if (footer) {
     // Initial setup for animation
     footer.style.opacity = "0";
@@ -156,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //================================================================
   // 6. CERTIFICATES EXPANSION (with ARIA)
   //================================================================
-  const certificateCards = document.querySelectorAll(".certificate-card");
+  const certificateCards = $$(".certificate-card");
 
   certificateCards.forEach((card) => {
     // Initial ARIA setup for focusable cards
@@ -204,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //================================================================
   // 7. SCROLL-TO-TOP BUTTON (Simplified)
   //================================================================
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  const scrollTopBtn = $("#scrollTopBtn");
   if (scrollTopBtn) {
     const handleScroll = () => {
       // Show button if scroll position is beyond 300px
@@ -225,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //================================================================
   // 8. FADE-IN ANIMATION FOR CARDS (Projects & Certificates)
   //================================================================
-  const fadeInCards = document.querySelectorAll(".fade-in-card");
+  const fadeInCards = $$(".fade-in-card");
 
   const fadeInObserverOptions = {
     root: null, // viewport

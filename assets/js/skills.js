@@ -197,16 +197,20 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       setTimeout(() => {
-        sortSkills(sortSelect.value);
+        if (sortSelect) {
+          sortSkills(sortSelect.value);
+        }
       }, 100);
     });
   });
 
   // Skill Sorting
-  sortSkills(sortSelect.value);
-  sortSelect.addEventListener("change", (event) => {
-    sortSkills(event.target.value);
-  });
+  if (sortSelect) {
+    sortSkills(sortSelect.value);
+    sortSelect.addEventListener("change", (event) => {
+      sortSkills(event.target.value);
+    });
+  }
 
   /* --- ANIMATE SKILL BARS ON SCROLL --- */
   const observerOptions = {

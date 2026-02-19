@@ -21,39 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //================================================================
-  // 2. DARK MODE TOGGLE & PERSISTENCE
-  //================================================================
-  const darkModeToggle = $("#darkModeToggle");
-
-  // Function to update icon based on mode
-  const updateDarkModeIcon = () => {
-    if (document.body.classList.contains("dark-mode")) {
-      darkModeToggle.textContent = "☀️";
-    } else {
-      darkModeToggle.textContent = "🌙";
-    }
-  };
-
-  // Set initial theme based on saved preference or system
-  const prefersDark = localStorage.getItem("darkMode") === "enabled" ||
-    (localStorage.getItem("darkMode") === null && window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-  if (darkModeToggle) {
-    if (prefersDark) {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
-    updateDarkModeIcon();
-
-    darkModeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      updateDarkModeIcon();
-      localStorage.setItem("darkMode", document.body.classList.contains("dark-mode") ? "enabled" : "disabled");
-    });
-  }
-
-  //================================================================
   // 3. NAVIGATION (TOGGLE & ACTIVE LINK)
   //================================================================
   const toggleBtn = $(".togglebtn");

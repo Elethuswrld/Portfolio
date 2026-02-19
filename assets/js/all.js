@@ -1,7 +1,7 @@
 import '../../animations.js';
 import '../../certificates.js';
 import '../../navigation.js';
-import '../../ui.js';
+import './ui.js';
 import './about.js';
 import './contact.js';
 import './gamedev.js';

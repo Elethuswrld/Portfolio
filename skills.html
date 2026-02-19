@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/assets/css/bundle.min.css"/>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
 
     <div class="loading">
@@ -49,7 +50,7 @@
       <span></span>
     </div>
 
-    <main class="hero-header">
+    <main id="main-content" class="hero-header">
       <div class="wrapper">
         <header>
           <a href="/index.html" class="logo" aria-label="Elethuswrld Home">
@@ -61,13 +62,13 @@
               class="togglebtn"
               aria-expanded="false"
               aria-controls="nav-links-menu"
-              aria-label="Toggle navigation menu"
+              aria-label="Open menu"
             >
               <span></span>
               <span></span>
               <span></span>
             </button>
-            <ul class="navlinks" id="nav-links-menu">
+            <ul class="navlinks" id="nav-links-menu" aria-label="Main navigation">
               <li><a href="/index.html">Home</a></li>
               <li><a href="/about.html">About</a></li>
               <li><a href="/skills.html" class="active">Skills</a></li>
@@ -1541,6 +1542,7 @@
 
     <script src="/assets/js/ui.js"></script>
     <script src="/assets/js/bundle.min.js"></script>
+    <script src="/assets/js/navigation.js"></script>
 
   </body>
 </html>

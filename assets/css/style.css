@@ -41,6 +41,18 @@ body {
   color: #333; /* Default text color for light mode */
 }
 
+/* Page transition animation */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
 /* Accessibility: skip-to-content + visible focus */
 .skip-link {
   position: absolute;
@@ -207,16 +219,18 @@ body.dark-mode .navlinks a {
     flex-direction: column;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-10px);
+    transform: translateX(100%);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    pointer-events: none;
+    transition: transform 0.35s ease, opacity 0.35s ease;
     z-index: 50;
   }
   .navlinks.open {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
   body.dark-mode .navlinks {
     background: #2a2a2a;
@@ -378,6 +392,49 @@ body.dark-mode .loading {
 .fade-in-card.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Scroll reveal + stagger */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover + tap polish */
+.project-card,
+.project-card-item,
+.skill-box,
+.skill-card,
+.cert-card,
+.certificate-card,
+.badge-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover,
+.project-card-item:hover,
+.skill-box:hover,
+.skill-card:hover,
+.cert-card:hover,
+.certificate-card:hover,
+.badge-card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+button,
+.btn {
+  transition: transform 0.2s ease;
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.95);
 }
 
 html.dark-mode body,

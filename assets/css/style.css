@@ -354,3 +354,9 @@ body.dark-mode .loading {
   opacity: 1;
   transform: translateY(0);
 }
+
+html.dark-mode body,
+body.dark-mode {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
